@@ -10,7 +10,6 @@
 		16C3BB2D2AC58C6200DCCD56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */; };
 		16C3BB2F2AC58C6200DCCD56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */; };
 		16C3BB312AC58C6200DCCD56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB302AC58C6200DCCD56 /* ViewController.swift */; };
-		16C3BB342AC58C6200DCCD56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C3BB322AC58C6200DCCD56 /* Main.storyboard */; };
 		16C3BB372AC58C6200DCCD56 /* OrtaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB352AC58C6200DCCD56 /* OrtaApp.xcdatamodeld */; };
 		16C3BB392AC58C6400DCCD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16C3BB382AC58C6400DCCD56 /* Assets.xcassets */; };
 		16C3BB3C2AC58C6400DCCD56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C3BB3A2AC58C6400DCCD56 /* LaunchScreen.storyboard */; };
@@ -21,7 +20,6 @@
 		16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		16C3BB302AC58C6200DCCD56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		16C3BB332AC58C6200DCCD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16C3BB362AC58C6200DCCD56 /* OrtaApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OrtaApp.xcdatamodel; sourceTree = "<group>"; };
 		16C3BB382AC58C6400DCCD56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16C3BB3B2AC58C6400DCCD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,7 +59,6 @@
 				16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */,
 				16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */,
 				16C3BB302AC58C6200DCCD56 /* ViewController.swift */,
-				16C3BB322AC58C6200DCCD56 /* Main.storyboard */,
 				16C3BB382AC58C6400DCCD56 /* Assets.xcassets */,
 				16C3BB3A2AC58C6400DCCD56 /* LaunchScreen.storyboard */,
 				16C3BB3D2AC58C6400DCCD56 /* Info.plist */,
@@ -130,7 +127,6 @@
 			files = (
 				16C3BB3C2AC58C6400DCCD56 /* LaunchScreen.storyboard in Resources */,
 				16C3BB392AC58C6400DCCD56 /* Assets.xcassets in Resources */,
-				16C3BB342AC58C6200DCCD56 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,14 +147,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		16C3BB322AC58C6200DCCD56 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				16C3BB332AC58C6200DCCD56 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		16C3BB3A2AC58C6400DCCD56 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,7 +284,6 @@
 				INFOPLIST_FILE = OrtaApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -324,7 +311,6 @@
 				INFOPLIST_FILE = OrtaApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
