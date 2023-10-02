@@ -52,8 +52,8 @@ extension AppFontProtocol {
         return apply(size: 36)
     }
 
-    func s37() -> UIFont {
-        return apply(size: 37)
+    func s34() -> UIFont {
+        return apply(size: 34)
     }
 }
 
@@ -72,4 +72,5 @@ enum AppFont: String, AppFontProtocol {
     case medium = "Inter-Medium"
     case semibold = "Inter-SemiBold"
     case bold = "Inter-Bold"
+    case extrabold = "Inter-ExtraBold"
 }
