@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16723EDC2ACAB42200F76ED2 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16723ED82ACAB42200F76ED2 /* Inter-Medium.ttf */; };
+		16723EDD2ACAB42200F76ED2 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16723ED92ACAB42200F76ED2 /* Inter-Bold.ttf */; };
+		16723EDE2ACAB42200F76ED2 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16723EDA2ACAB42200F76ED2 /* Inter-Regular.ttf */; };
+		16723EDF2ACAB42200F76ED2 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16723EDB2ACAB42200F76ED2 /* Inter-SemiBold.ttf */; };
+		16723EE12ACAB43E00F76ED2 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723EE02ACAB43E00F76ED2 /* AppFont.swift */; };
 		16C3BB2D2AC58C6200DCCD56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */; };
 		16C3BB2F2AC58C6200DCCD56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */; };
 		16C3BB312AC58C6200DCCD56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB302AC58C6200DCCD56 /* ViewController.swift */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16723ED82ACAB42200F76ED2 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		16723ED92ACAB42200F76ED2 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		16723EDA2ACAB42200F76ED2 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		16723EDB2ACAB42200F76ED2 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		16723EE02ACAB43E00F76ED2 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		16C3BB292AC58C6200DCCD56 /* OrtaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrtaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +47,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16723ED72ACAB42200F76ED2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				16723ED82ACAB42200F76ED2 /* Inter-Medium.ttf */,
+				16723ED92ACAB42200F76ED2 /* Inter-Bold.ttf */,
+				16723EDA2ACAB42200F76ED2 /* Inter-Regular.ttf */,
+				16723EDB2ACAB42200F76ED2 /* Inter-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		16C3BB202AC58C6200DCCD56 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +84,8 @@
 				16C3BB3A2AC58C6400DCCD56 /* LaunchScreen.storyboard */,
 				16C3BB3D2AC58C6400DCCD56 /* Info.plist */,
 				16C3BB352AC58C6200DCCD56 /* OrtaApp.xcdatamodeld */,
+				16723ED72ACAB42200F76ED2 /* Fonts */,
+				16723EE02ACAB43E00F76ED2 /* AppFont.swift */,
 			);
 			path = OrtaApp;
 			sourceTree = "<group>";
@@ -125,8 +148,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16723EDF2ACAB42200F76ED2 /* Inter-SemiBold.ttf in Resources */,
 				16C3BB3C2AC58C6400DCCD56 /* LaunchScreen.storyboard in Resources */,
+				16723EDE2ACAB42200F76ED2 /* Inter-Regular.ttf in Resources */,
 				16C3BB392AC58C6400DCCD56 /* Assets.xcassets in Resources */,
+				16723EDD2ACAB42200F76ED2 /* Inter-Bold.ttf in Resources */,
+				16723EDC2ACAB42200F76ED2 /* Inter-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16C3BB312AC58C6200DCCD56 /* ViewController.swift in Sources */,
+				16723EE12ACAB43E00F76ED2 /* AppFont.swift in Sources */,
 				16C3BB2D2AC58C6200DCCD56 /* AppDelegate.swift in Sources */,
 				16C3BB2F2AC58C6200DCCD56 /* SceneDelegate.swift in Sources */,
 				16C3BB372AC58C6200DCCD56 /* OrtaApp.xcdatamodeld in Sources */,
