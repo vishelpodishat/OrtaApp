@@ -24,4 +24,8 @@ extension AppColorProtocol {
 
 enum AppColor: String, AppColorProtocol {
     case blue
+    case blackLabel
+    case placeholderColor
+    case doesnthaveAccount
+    case underLineColor
 }

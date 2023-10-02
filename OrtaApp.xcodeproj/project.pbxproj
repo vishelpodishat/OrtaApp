@@ -16,6 +16,8 @@
 		16723EE62ACAB72300F76ED2 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723EE52ACAB72300F76ED2 /* AppColor.swift */; };
 		16723EEB2ACAB8DA00F76ED2 /* AuthorizationBlueHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723EEA2ACAB8DA00F76ED2 /* AuthorizationBlueHeaderView.swift */; };
 		16723EED2ACABA6500F76ED2 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16723EEC2ACABA6500F76ED2 /* Inter-ExtraBold.ttf */; };
+		16723EF02ACACEA700F76ED2 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723EEF2ACACEA700F76ED2 /* CustomTextField.swift */; };
+		16723EF22ACAD21300F76ED2 /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723EF12ACAD21300F76ED2 /* AppImages.swift */; };
 		16C3BB2D2AC58C6200DCCD56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */; };
 		16C3BB2F2AC58C6200DCCD56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */; };
 		16C3BB312AC58C6200DCCD56 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB302AC58C6200DCCD56 /* AuthorizationViewController.swift */; };
@@ -33,6 +35,8 @@
 		16723EE52ACAB72300F76ED2 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		16723EEA2ACAB8DA00F76ED2 /* AuthorizationBlueHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationBlueHeaderView.swift; sourceTree = "<group>"; };
 		16723EEC2ACABA6500F76ED2 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		16723EEF2ACACEA700F76ED2 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		16723EF12ACAD21300F76ED2 /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
 		16C3BB292AC58C6200DCCD56 /* OrtaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrtaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,8 +74,7 @@
 		16723EE72ACAB80800F76ED2 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				16C3BB302AC58C6200DCCD56 /* AuthorizationViewController.swift */,
-				16723EEA2ACAB8DA00F76ED2 /* AuthorizationBlueHeaderView.swift */,
+				16723EEE2ACACE7800F76ED2 /* Entering */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -84,6 +87,7 @@
 				16723ED72ACAB42200F76ED2 /* Fonts */,
 				16723EE02ACAB43E00F76ED2 /* AppFont.swift */,
 				16723EE52ACAB72300F76ED2 /* AppColor.swift */,
+				16723EF12ACAD21300F76ED2 /* AppImages.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -95,6 +99,16 @@
 				16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */,
 			);
 			path = AppConstruts;
+			sourceTree = "<group>";
+		};
+		16723EEE2ACACE7800F76ED2 /* Entering */ = {
+			isa = PBXGroup;
+			children = (
+				16C3BB302AC58C6200DCCD56 /* AuthorizationViewController.swift */,
+				16723EEA2ACAB8DA00F76ED2 /* AuthorizationBlueHeaderView.swift */,
+				16723EEF2ACACEA700F76ED2 /* CustomTextField.swift */,
+			);
+			path = Entering;
 			sourceTree = "<group>";
 		};
 		16C3BB202AC58C6200DCCD56 = {
@@ -206,6 +220,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16723EF02ACACEA700F76ED2 /* CustomTextField.swift in Sources */,
+				16723EF22ACAD21300F76ED2 /* AppImages.swift in Sources */,
 				16C3BB312AC58C6200DCCD56 /* AuthorizationViewController.swift in Sources */,
 				16723EE12ACAB43E00F76ED2 /* AppFont.swift in Sources */,
 				16C3BB2D2AC58C6200DCCD56 /* AppDelegate.swift in Sources */,
