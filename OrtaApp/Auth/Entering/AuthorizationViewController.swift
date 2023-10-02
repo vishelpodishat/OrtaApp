@@ -19,63 +19,16 @@ final class AuthorizationViewController: UIViewController {
         return view
     }()
 
-    private lazy var smsEditImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = AppImage.smsEdit.uiImage
-        imageView.contentMode = .scaleAspectFit
-        return imageView
+    private lazy var textFieldView: TextFieldView = {
+        let view = TextFieldView()
+        view.backgroundColor = .systemBackground
+        return view
     }()
 
-    private lazy var authorizationLoginTextField: CustomTextField = {
-        let textField = CustomTextField()
-        textField.font = AppFont.regular.s17()
-        textField.textColor = AppColor.blackLabel.uiColor
-        textField.textAlignment = .left
-        textField.attributedPlaceholder = NSAttributedString(string: "Email",
-                                                             attributes:
-                                                                [NSAttributedString.Key.foregroundColor:
-                                                                AppColor.placeholderColor.uiColor]
-        )
-        textField.leftView = smsEditImageView
-        textField.leftViewMode = .always
-        return textField
-    }()
-
-    private lazy var eyeClosedButton: UIButton = {
-        if #available(iOS 15.0, *) {
-            var configuration = UIButton.Configuration.plain()
-            configuration.image = AppImage.eye.uiImage
-            let button = UIButton(configuration: configuration)
-            button.tintColor = .lightGray
-            return button
-        } else {
-            let button = UIButton(type: .system)
-            button.tintColor = .lightGray
-            button.setImage(AppImage.eye.systemImage, for: [])
-            button.contentEdgeInsets = UIEdgeInsets(top: 12,
-                                                    left: 0,
-                                                    bottom: 12,
-                                                    right: 16)
-            return button
-        }
-    }()
-
-    private lazy var authorizationPasswordTextField: UITextField = {
-        let textField = UITextField()
-        textField.font = AppFont.regular.s17()
-        textField.textColor = AppColor.blackLabel.uiColor
-        textField.textAlignment = .left
-        textField.attributedPlaceholder = NSAttributedString(string: "Password",
-                                                             attributes:
-                                                                [NSAttributedString.Key.foregroundColor:
-                                                                AppColor.placeholderColor.uiColor]
-        )
-        textField.rightView = eyeClosedButton
-        textField.rightViewMode = .always
-//        textField.leftView = smsEditImageView
-//        textField.leftViewMode = .always
-        textField.isSecureTextEntry = false
-        return textField
+    private lazy var passwordView: PasswordTextFieldView = {
+        let view = PasswordTextFieldView()
+        view.backgroundColor = .systemBackground
+        return view
     }()
 
     private lazy var enterAccButton: UIButton = {
@@ -120,8 +73,7 @@ final class AuthorizationViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .white
 
-        [backgroundAuthorizationView, smsEditImageView, authorizationLoginTextField,
-         authorizationPasswordTextField,
+        [backgroundAuthorizationView, textFieldView, passwordView,
          enterAccButton, forgotPasswordButton, notHaveAccButton].forEach {
             view.addSubview($0)
         }
@@ -137,15 +89,15 @@ final class AuthorizationViewController: UIViewController {
             make.height.equalTo(217)
         }
 
-        authorizationPasswordTextField.snp.makeConstraints { make in
-            make.top.equalTo(authorizationLoginTextField.snp.bottom).offset(8)
+        passwordView.snp.makeConstraints { make in
+            make.top.equalTo(textFieldView.snp.bottom).offset(8)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(56)
         }
 
         enterAccButton.snp.makeConstraints { make in
-            make.top.equalTo(authorizationPasswordTextField.snp.bottom).offset(24)
+            make.top.equalTo(passwordView.snp.bottom).offset(24)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(64)
@@ -169,12 +121,7 @@ final class AuthorizationViewController: UIViewController {
     }
 
     private func setupTextFieldConstraints() {
-        smsEditImageView.snp.makeConstraints { make in
-            make.top.equalTo(backgroundAuthorizationView.snp.bottom).offset(80)
-            make.trailing.equalTo(authorizationLoginTextField.snp.leading).offset(-16)
-        }
-
-        authorizationLoginTextField.snp.makeConstraints { make in
+        textFieldView.snp.makeConstraints { make in
             make.top.equalTo(backgroundAuthorizationView.snp.bottom).offset(80)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
