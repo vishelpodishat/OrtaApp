@@ -32,5 +32,9 @@ enum AppImage: String, AppImageProtocol {
     case smsEdit
     case eyeSlash
     case eye
+    case building
+    case checkmarkBlue
+    case personImage
+    case arrowLeft
 }
 

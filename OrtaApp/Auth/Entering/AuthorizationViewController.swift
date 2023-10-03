@@ -58,6 +58,7 @@ final class AuthorizationViewController: UIViewController {
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = AppFont.semibold.s17()
         button.setTitle("У меня нету аккаунта", for: .normal)
+        button.addTarget(self, action: #selector(didPressedNotHaveAccount), for: .touchUpInside)
         return button
     }()
 
@@ -71,7 +72,7 @@ final class AuthorizationViewController: UIViewController {
     // MARK: - Setup Views
 
     private func setupViews() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
 
         [backgroundAuthorizationView, textFieldView, passwordView,
          enterAccButton, forgotPasswordButton, notHaveAccButton].forEach {
@@ -127,6 +128,12 @@ final class AuthorizationViewController: UIViewController {
             make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(56)
         }
+    }
+
+    // MARK: - Actions
+    @objc private func didPressedNotHaveAccount() {
+        let controller = ChooseRoleViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 
