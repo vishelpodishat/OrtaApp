@@ -23,6 +23,8 @@
 		16723EF82ACBDA6300F76ED2 /* ChooseRoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723EF72ACBDA6200F76ED2 /* ChooseRoleViewController.swift */; };
 		16723EFA2ACBDC2E00F76ED2 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723EF92ACBDC2E00F76ED2 /* UserView.swift */; };
 		16723EFD2ACBE8BE00F76ED2 /* OrganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723EFC2ACBE8BE00F76ED2 /* OrganizationView.swift */; };
+		16723EFF2ACC060700F76ED2 /* RegistrationUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723EFE2ACC060700F76ED2 /* RegistrationUserViewController.swift */; };
+		16723F032ACC6E3300F76ED2 /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723F022ACC6E3300F76ED2 /* RegistrationModel.swift */; };
 		16C3BB2D2AC58C6200DCCD56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */; };
 		16C3BB2F2AC58C6200DCCD56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */; };
 		16C3BB312AC58C6200DCCD56 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB302AC58C6200DCCD56 /* AuthorizationViewController.swift */; };
@@ -47,6 +49,8 @@
 		16723EF72ACBDA6200F76ED2 /* ChooseRoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRoleViewController.swift; sourceTree = "<group>"; };
 		16723EF92ACBDC2E00F76ED2 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		16723EFC2ACBE8BE00F76ED2 /* OrganizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationView.swift; sourceTree = "<group>"; };
+		16723EFE2ACC060700F76ED2 /* RegistrationUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUserViewController.swift; sourceTree = "<group>"; };
+		16723F022ACC6E3300F76ED2 /* RegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
 		16C3BB292AC58C6200DCCD56 /* OrtaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrtaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 			children = (
 				16723EEE2ACACE7800F76ED2 /* Entering */,
 				16723EFB2ACBE5A100F76ED2 /* ChooseRole */,
+				16723F002ACC6DF900F76ED2 /* RegistrationUser */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -132,6 +137,31 @@
 				16723EFC2ACBE8BE00F76ED2 /* OrganizationView.swift */,
 			);
 			path = ChooseRole;
+			sourceTree = "<group>";
+		};
+		16723F002ACC6DF900F76ED2 /* RegistrationUser */ = {
+			isa = PBXGroup;
+			children = (
+				16723F012ACC6E0800F76ED2 /* View */,
+				16723F042ACC6E3B00F76ED2 /* Model */,
+			);
+			path = RegistrationUser;
+			sourceTree = "<group>";
+		};
+		16723F012ACC6E0800F76ED2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				16723EFE2ACC060700F76ED2 /* RegistrationUserViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		16723F042ACC6E3B00F76ED2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				16723F022ACC6E3300F76ED2 /* RegistrationModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		16C3BB202AC58C6200DCCD56 = {
@@ -248,6 +278,7 @@
 				16C3BB312AC58C6200DCCD56 /* AuthorizationViewController.swift in Sources */,
 				16723EF82ACBDA6300F76ED2 /* ChooseRoleViewController.swift in Sources */,
 				16723EE12ACAB43E00F76ED2 /* AppFont.swift in Sources */,
+				16723EFF2ACC060700F76ED2 /* RegistrationUserViewController.swift in Sources */,
 				16C3BB2D2AC58C6200DCCD56 /* AppDelegate.swift in Sources */,
 				16723EF62ACB050900F76ED2 /* PasswordTextFieldView.swift in Sources */,
 				16C3BB2F2AC58C6200DCCD56 /* SceneDelegate.swift in Sources */,
@@ -256,6 +287,7 @@
 				16C3BB372AC58C6200DCCD56 /* OrtaApp.xcdatamodeld in Sources */,
 				16723EFA2ACBDC2E00F76ED2 /* UserView.swift in Sources */,
 				16723EE62ACAB72300F76ED2 /* AppColor.swift in Sources */,
+				16723F032ACC6E3300F76ED2 /* RegistrationModel.swift in Sources */,
 				16723EEB2ACAB8DA00F76ED2 /* AuthorizationBlueHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

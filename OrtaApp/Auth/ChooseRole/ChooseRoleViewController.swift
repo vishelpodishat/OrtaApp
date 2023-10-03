@@ -57,6 +57,7 @@ final class ChooseRoleViewController: UIViewController {
         button.titleLabel?.font = AppFont.semibold.s17()
         button.setTitleColor(.white, for: .normal)
         button.setTitle("Далее", for: .normal)
+        button.addTarget(self, action: #selector(didPressedContinueButton), for: .touchUpInside)
         return button
     }()
 
@@ -131,7 +132,11 @@ final class ChooseRoleViewController: UIViewController {
     // MARK: - Actions
 
     @objc private func didPressedBackButton() {
-        let controller = AuthorizationViewController()
         self.navigationController?.popViewController(animated: true)
+    }
+
+    @objc private func didPressedContinueButton() {
+        let controller = RegistrationUserViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

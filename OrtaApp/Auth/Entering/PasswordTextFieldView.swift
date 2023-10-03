@@ -81,12 +81,14 @@ final class PasswordTextFieldView: UIView {
         smsEditImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.centerY.equalToSuperview()
+            make.size.equalTo(28)
         }
 
         authorizationTextField.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(17.5)
             make.leading.equalTo(smsEditImageView.snp.trailing).offset(16)
-//            make.trailing.equalToSuperview().offset(-16)
-            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-17.5)
         }
         
         eyeClosedButton.snp.makeConstraints { make in
