@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SkyFloatingLabelTextField
 
 final class AuthorizationViewController: UIViewController {
 
@@ -19,16 +20,81 @@ final class AuthorizationViewController: UIViewController {
         return view
     }()
 
-    private lazy var textFieldView: TextFieldView = {
-        let view = TextFieldView()
-        view.backgroundColor = .systemBackground
-        return view
+    private lazy var authorizationTextField: SkyFloatingLabelTextField = {
+        let textField = SkyFloatingLabelTextFieldWithIcon(frame: CGRect(x: 0,
+                                                                        y: 0,
+                                                                        width: 342,
+                                                                        height: 56),
+                                                          iconType: .image)
+        textField.font = AppFont.regular.s17()
+        textField.textColor = AppColor.blackLabel.uiColor
+        textField.iconImage = AppImage.smsEdit.uiImage
+        textField.iconMarginLeft = 16
+        textField.iconWidth = 28
+        textField.iconMarginBottom = 7
+        textField.selectedTitleColor = AppColor.placeholderColor.uiColor
+        textField.selectedLineHeight = 1.0
+        textField.selectedLineColor = AppColor.placeholderColor.uiColor
+        textField.textAlignment = .left
+        textField.attributedPlaceholder = NSAttributedString(string: "Email",
+                                                             attributes:
+                                                                [NSAttributedString.Key.foregroundColor:
+                                                                    AppColor.placeholderColor.uiColor]
+        )
+        textField.autocorrectionType = .no
+        textField.keyboardType = .default
+        textField.returnKeyType = .done
+        return textField
     }()
 
-    private lazy var passwordView: PasswordTextFieldView = {
-        let view = PasswordTextFieldView()
-        view.backgroundColor = .systemBackground
-        return view
+    private lazy var passwordTextField: SkyFloatingLabelTextField = {
+        let textField = SkyFloatingLabelTextFieldWithIcon(frame: CGRect(x: 0,
+                                                                        y: 0,
+                                                                        width: 342,
+                                                                        height: 56),
+                                                          iconType: .image)
+        textField.font = AppFont.regular.s17()
+        textField.textColor = AppColor.blackLabel.uiColor
+        textField.iconImage = AppImage.smsEdit.uiImage
+        textField.iconMarginLeft = 16
+        textField.iconWidth = 28
+        textField.iconMarginBottom = 7
+        textField.selectedTitleColor = AppColor.placeholderColor.uiColor
+        textField.selectedLineHeight = 1.0
+        textField.selectedLineColor = AppColor.placeholderColor.uiColor
+        textField.textAlignment = .left
+        textField.attributedPlaceholder = NSAttributedString(string: "Password",
+                                                             attributes:
+                                                                [NSAttributedString.Key.foregroundColor:
+                                                                    AppColor.placeholderColor.uiColor]
+        )
+        textField.rightViewMode = .always
+        eyeClosedButton.frame = CGRect(x: 0, y: 7, width: 28, height: 28)
+        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 28, height: 28))
+        textField.rightView?.addSubview(eyeClosedButton)
+        textField.autocorrectionType = .no
+        textField.keyboardType = .default
+        textField.returnKeyType = .done
+        return textField
+    }()
+
+    private lazy var eyeClosedButton: UIButton = {
+        if #available(iOS 15.0, *) {
+            var configuration = UIButton.Configuration.plain()
+            configuration.image = AppImage.eye.uiImage
+            let button = UIButton(configuration: configuration)
+            button.tintColor = .lightGray
+            return button
+        } else {
+            let button = UIButton(type: .system)
+            button.tintColor = .lightGray
+            button.setImage(AppImage.eye.systemImage, for: [])
+            button.contentEdgeInsets = UIEdgeInsets(top: 0,
+                                                    left: -16,
+                                                    bottom: 0,
+                                                    right: 40)
+            return button
+        }
     }()
 
     private lazy var enterAccButton: UIButton = {
@@ -72,9 +138,9 @@ final class AuthorizationViewController: UIViewController {
     // MARK: - Setup Views
 
     private func setupViews() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .white
 
-        [backgroundAuthorizationView, textFieldView, passwordView,
+        [backgroundAuthorizationView, authorizationTextField, passwordTextField,
          enterAccButton, forgotPasswordButton, notHaveAccButton].forEach {
             view.addSubview($0)
         }
@@ -90,15 +156,15 @@ final class AuthorizationViewController: UIViewController {
             make.height.equalTo(217)
         }
 
-        passwordView.snp.makeConstraints { make in
-            make.top.equalTo(textFieldView.snp.bottom).offset(8)
+        passwordTextField.snp.makeConstraints { make in
+            make.top.equalTo(authorizationTextField.snp.bottom).offset(8)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(56)
         }
 
         enterAccButton.snp.makeConstraints { make in
-            make.top.equalTo(passwordView.snp.bottom).offset(24)
+            make.top.equalTo(passwordTextField.snp.bottom).offset(24)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(64)
@@ -122,12 +188,16 @@ final class AuthorizationViewController: UIViewController {
     }
 
     private func setupTextFieldConstraints() {
-        textFieldView.snp.makeConstraints { make in
+        authorizationTextField.snp.makeConstraints { make in
             make.top.equalTo(backgroundAuthorizationView.snp.bottom).offset(80)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(56)
         }
+
+//        passwordTextField.snp.makeConstraints { make in
+//            make.centerY.equalToSuperview()
+//        }
     }
 
     // MARK: - Actions

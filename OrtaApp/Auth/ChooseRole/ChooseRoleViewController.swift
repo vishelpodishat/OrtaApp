@@ -31,6 +31,14 @@ final class ChooseRoleViewController: UIViewController {
         return label
     }()
 
+    private lazy var userTitleButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .systemBackground
+        button.setTitleColor(AppColor.blackLabel.uiColor, for: .normal)
+        button.setTitle("Пользователь", for: .normal)
+        return button
+    }()
+    
     private lazy var userBackgroundView: UserView = {
         let view = UserView()
         view.backgroundColor = .white

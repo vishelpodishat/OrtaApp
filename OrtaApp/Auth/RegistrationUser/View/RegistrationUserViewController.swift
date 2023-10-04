@@ -10,7 +10,23 @@ import SnapKit
 
 final class RegistrationUserViewController: UIViewController {
 
+    // MARK: Private Properties
+
+    private var data: [RegistrationInfoModel] = []
+
     // MARK: - UI
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.isScrollEnabled = true
+        scrollView.showsVerticalScrollIndicator = false
+        return scrollView
+    }()
+
+    private lazy var contentView: UIView = {
+        let view = UIView()
+        return view
+    }()
+
     private lazy var registrationTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Регистрация"
@@ -22,10 +38,14 @@ final class RegistrationUserViewController: UIViewController {
     }()
 
     private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
+        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.backgroundColor = .systemBackground
+        tableView.register(RegistrationTableViewCell.self,
+                           forCellReuseIdentifier: RegistrationTableViewCell.cellID)
+        tableView.backgroundColor = .white
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 56
         return tableView
     }()
 
@@ -53,19 +73,43 @@ final class RegistrationUserViewController: UIViewController {
 
     private func setupViews() {
         view.backgroundColor = .white
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
 
-        [registrationTitleLabel].forEach {
-            view.addSubview($0)
+        [registrationTitleLabel, tableView].forEach {
+            contentView.addSubview($0)
         }
     }
 
     // MARK: - Setup Constraints
 
     private func setupConstraints() {
+        scrollView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+
+        contentView.snp.makeConstraints { make in
+            make.leading.equalTo(scrollView)
+            make.trailing.equalTo(scrollView)
+            make.top.equalTo(scrollView)
+            make.bottom.equalTo(scrollView)
+            make.width.equalTo(scrollView)
+        }
+
         registrationTitleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(111)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
+        }
+
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(registrationTitleLabel.snp.bottom).offset(24)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+            make.bottom.equalToSuperview()
         }
     }
 
@@ -83,9 +127,22 @@ extension RegistrationUserViewController: UITableViewDelegate {
 
 // MARK: - Data Source
 extension RegistrationUserViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 11
     }
 
-    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RegistrationTableViewCell.cellID,
+                                                       for: indexPath) as? RegistrationTableViewCell else {
+            fatalError("Could not cast to RegistrationTableViewCell")
+        }
+        return cell 
+    }
+}
+
+private extension RegistrationUserViewController {
+    func createData() {
+        data.append(
+            RegistrationInfoModel(icon: AppImage.personImage.uiImage))
+    }
 }

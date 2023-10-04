@@ -36,5 +36,13 @@ enum AppImage: String, AppImageProtocol {
     case checkmarkBlue
     case personImage
     case arrowLeft
+    case profileUsers
+    case passwordCheck
+    case location
+    case link
+    case home
+    case call
+    case calendarTick
+    case cake
 }
 
