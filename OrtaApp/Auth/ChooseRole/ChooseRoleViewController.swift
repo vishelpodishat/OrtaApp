@@ -33,29 +33,52 @@ final class ChooseRoleViewController: UIViewController {
 
     private lazy var userTitleButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = .systemBackground
-        button.setTitleColor(AppColor.blackLabel.uiColor, for: .normal)
-        button.setTitle("Пользователь", for: .normal)
+        button.configuration = .bordered()
+        button.configuration?.baseBackgroundColor = .white
+        button.configuration?.baseForegroundColor = .black
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 24
+        button.layer.borderWidth = 1
+        button.layer.borderColor = AppColor.underLineColor.cgColor
+        button.configuration?.image = AppImage.personImage.uiImage
+        button.contentHorizontalAlignment = .leading
+        button.configuration?.imagePadding = 16
+        button.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 0,
+                                                                      leading: 24,
+                                                                      bottom: 0,
+                                                                      trailing: 16)
+        button.configuration?.attributedTitle = AttributedString("Пользователь",
+                                                                 attributes:
+                                                                    AttributeContainer(
+                                                                        [NSAttributedString.Key.font:
+                                                                            AppFont.regular.s14()]))
         return button
     }()
-    
-    private lazy var userBackgroundView: UserView = {
-        let view = UserView()
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 24
-        view.layer.borderWidth = 1
-        view.layer.borderColor = AppColor.underLineColor.cgColor
-        return view
+
+    private lazy var organizationTitleButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.configuration = .bordered()
+        button.configuration?.baseBackgroundColor = .white
+        button.configuration?.baseForegroundColor = .black
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 24
+        button.layer.borderWidth = 1
+        button.layer.borderColor = AppColor.underLineColor.cgColor
+        button.configuration?.image = AppImage.building.uiImage
+        button.contentHorizontalAlignment = .leading
+        button.configuration?.imagePadding = 16
+        button.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 0,
+                                                                      leading: 24,
+                                                                      bottom: 0,
+                                                                      trailing: 16)
+        button.configuration?.attributedTitle = AttributedString("Организация",
+                                                                 attributes:
+                                                                    AttributeContainer(
+                                                                        [NSAttributedString.Key.font:
+                                                                            AppFont.regular.s14()]))
+        return button
     }()
 
-    private lazy var organzationBackgroundView: OrganizationView = {
-        let view = OrganizationView()
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 24
-        view.layer.borderWidth = 1
-        view.layer.borderColor = AppColor.underLineColor.cgColor
-        return view
-    }()
 
     private lazy var continueButton: UIButton = {
         let button = UIButton(type: .system)
@@ -94,8 +117,8 @@ final class ChooseRoleViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .systemBackground
 
-        [titleHeaderLabel, chooseRoleLabel, userBackgroundView,
-         organzationBackgroundView, continueButton].forEach {
+        [titleHeaderLabel, chooseRoleLabel, userTitleButton,
+         organizationTitleButton, continueButton].forEach {
             view.addSubview($0)
         }
     }
@@ -115,15 +138,15 @@ final class ChooseRoleViewController: UIViewController {
             make.trailing.equalToSuperview().offset(-24)
         }
 
-        userBackgroundView.snp.makeConstraints { make in
+        userTitleButton.snp.makeConstraints { make in
             make.top.equalTo(chooseRoleLabel.snp.bottom).offset(24)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(60)
         }
 
-        organzationBackgroundView.snp.makeConstraints { make in
-            make.top.equalTo(userBackgroundView.snp.bottom).offset(16)
+        organizationTitleButton.snp.makeConstraints { make in
+            make.top.equalTo(userTitleButton.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(60)
