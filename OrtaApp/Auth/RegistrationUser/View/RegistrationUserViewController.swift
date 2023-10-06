@@ -46,7 +46,42 @@ final class RegistrationUserViewController: UIViewController {
         tableView.backgroundColor = .white
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 56
+        tableView.separatorStyle = .none
         return tableView
+    }()
+
+    private lazy var confirmAgeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Продолжая я подтверждаю что мне исполнилось 16 лет"
+        label.font = AppFont.regular.s13()
+        label.textColor = AppColor.placeholderColor.uiColor
+        label.numberOfLines = 2
+        label.textAlignment = .center
+        return label
+    }()
+
+    private lazy var registrationButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.layer.cornerRadius = 20
+        button.layer.masksToBounds = true
+        button.backgroundColor = AppColor.blue.uiColor
+        button.titleLabel?.font = AppFont.semibold.s17()
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle("Зарегистрироваться", for: .normal)
+        button.addTarget(self, action: #selector(didPressedContinueButton), for: .touchUpInside)
+        return button
+    }()
+
+    private lazy var iHaveAccButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.layer.cornerRadius = 20
+        button.layer.masksToBounds = true
+        button.backgroundColor = AppColor.doesnthaveAccount.uiColor
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = AppFont.semibold.s17()
+        button.setTitle("У меня нету аккаунта", for: .normal)
+        button.addTarget(self, action: #selector(didPressedIHaveAccount), for: .touchUpInside)
+        return button
     }()
 
     // MARK: - LifeCycle
@@ -56,6 +91,7 @@ final class RegistrationUserViewController: UIViewController {
         setupViews()
         setupConstraints()
         setupNavigationBar()
+        hideKeyboardWhenTappedAround()
     }
 
     // MARK: - Setup Navigation Controller
@@ -73,12 +109,15 @@ final class RegistrationUserViewController: UIViewController {
 
     private func setupViews() {
         view.backgroundColor = .white
-        view.addSubview(scrollView)
+
         scrollView.addSubview(contentView)
 
-        [registrationTitleLabel, tableView].forEach {
+        [registrationTitleLabel, tableView, confirmAgeLabel,
+         registrationButton, iHaveAccButton].forEach {
             contentView.addSubview($0)
         }
+
+        view.addSubview(scrollView)
     }
 
     // MARK: - Setup Constraints
@@ -100,7 +139,7 @@ final class RegistrationUserViewController: UIViewController {
         }
 
         registrationTitleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(111)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(8)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
         }
@@ -110,6 +149,28 @@ final class RegistrationUserViewController: UIViewController {
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.bottom.equalToSuperview()
+            make.height.equalTo(696)
+        }
+
+        confirmAgeLabel.snp.makeConstraints { make in
+            make.top.equalTo(tableView.snp.bottom).offset(24)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+            make.height.equalTo(32)
+        }
+
+        registrationButton.snp.makeConstraints { make in
+            make.top.equalTo(confirmAgeLabel.snp.bottom).offset(16)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+            make.height.equalTo(64)
+        }
+
+        iHaveAccButton.snp.makeConstraints { make in
+            make.top.equalTo(registrationButton.snp.bottom).offset(16)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+            make.height.equalTo(64)
         }
     }
 
@@ -117,6 +178,13 @@ final class RegistrationUserViewController: UIViewController {
 
     @objc private func didPressedBackButton() {
         self.navigationController?.popViewController(animated: true)
+    }
+
+    @objc private func didPressedContinueButton() {
+        //
+    }
+    @objc private func didPressedIHaveAccount() {
+        //
     }
 }
 
@@ -138,11 +206,29 @@ extension RegistrationUserViewController: UITableViewDataSource {
         }
         return cell 
     }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 56
+    }
 }
 
 private extension RegistrationUserViewController {
     func createData() {
         data.append(
             RegistrationInfoModel(icon: AppImage.personImage.uiImage))
+    }
+}
+
+// MARK: - Hide Keyboard when screen Tapped
+extension RegistrationUserViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self,
+                                         action: #selector(RegistrationUserViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
