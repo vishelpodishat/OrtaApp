@@ -1,21 +1,20 @@
 //
-//  RegistrationTableViewCell.swift
+//  CompanyRegistrationTableViewCell.swift
 //  OrtaApp
 //
-//  Created by Алишер Сайдешев on 04.10.2023.
+//  Created by Алишер Сайдешев on 07.10.2023.
 //
 
 import UIKit
 import SnapKit
 import SkyFloatingLabelTextField
 
-class RegistrationTableViewCell: UITableViewCell {
+final class CompanyRegistrationTableViewCell: UITableViewCell {
 
     // MARK: - ID
-    public static let cellID = String(describing: RegistrationTableViewCell.self)
+    public static let cellID = String(describing: CompanyRegistrationTableViewCell.self)
 
     // MARK: - UI
-
     private lazy var customTextField: SkyFloatingLabelTextField = {
         let textField = SkyFloatingLabelTextFieldWithIcon(frame: CGRect(x: 0,
                                                                         y: 0,
@@ -32,7 +31,7 @@ class RegistrationTableViewCell: UITableViewCell {
         textField.selectedLineHeight = 1.0
         textField.selectedLineColor = AppColor.placeholderColor.uiColor
         textField.textAlignment = .left
-        textField.attributedPlaceholder = NSAttributedString(string: "Email",
+        textField.attributedPlaceholder = NSAttributedString(string: "Название организаций",
                                                              attributes:
                                                                 [NSAttributedString.Key.foregroundColor:
                                                                     AppColor.placeholderColor.uiColor]
@@ -69,12 +68,14 @@ class RegistrationTableViewCell: UITableViewCell {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.centerY.equalToSuperview()
+            make.height.equalTo(56)
         }
     }
 }
 
-extension RegistrationTableViewCell: UITextFieldDelegate {
+extension CompanyRegistrationTableViewCell: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return true
     }
 }
+

@@ -23,11 +23,13 @@
 		16723EFD2ACBE8BE00F76ED2 /* OrganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723EFC2ACBE8BE00F76ED2 /* OrganizationView.swift */; };
 		16723EFF2ACC060700F76ED2 /* RegistrationUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723EFE2ACC060700F76ED2 /* RegistrationUserViewController.swift */; };
 		16723F032ACC6E3300F76ED2 /* RegistrationInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723F022ACC6E3300F76ED2 /* RegistrationInfoModel.swift */; };
-		168FA4022ACD618E000741DE /* RegistrationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FA4012ACD618E000741DE /* RegistrationTableViewCell.swift */; };
+		168FA4022ACD618E000741DE /* UserRegistrationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FA4012ACD618E000741DE /* UserRegistrationTableViewCell.swift */; };
 		168FA4052ACD74F8000741DE /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 168FA4042ACD74F8000741DE /* SkyFloatingLabelTextField */; };
 		168FA4072AD01F0C000741DE /* GifLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FA4062AD01F0C000741DE /* GifLoading.swift */; };
 		168FA40A2AD020CF000741DE /* DoubleRing.gif in Resources */ = {isa = PBXBuildFile; fileRef = 168FA4092AD020CF000741DE /* DoubleRing.gif */; };
 		168FA40C2AD0216D000741DE /* ConfirmAccViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FA40B2AD0216D000741DE /* ConfirmAccViewController.swift */; };
+		168FA4102AD14C24000741DE /* RegistrationCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FA40F2AD14C24000741DE /* RegistrationCompanyViewController.swift */; };
+		168FA4132AD14D64000741DE /* CompanyRegistrationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FA4122AD14D64000741DE /* CompanyRegistrationTableViewCell.swift */; };
 		16C3BB2D2AC58C6200DCCD56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */; };
 		16C3BB2F2AC58C6200DCCD56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */; };
 		16C3BB312AC58C6200DCCD56 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB302AC58C6200DCCD56 /* AuthorizationViewController.swift */; };
@@ -52,10 +54,12 @@
 		16723EFC2ACBE8BE00F76ED2 /* OrganizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationView.swift; sourceTree = "<group>"; };
 		16723EFE2ACC060700F76ED2 /* RegistrationUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUserViewController.swift; sourceTree = "<group>"; };
 		16723F022ACC6E3300F76ED2 /* RegistrationInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInfoModel.swift; sourceTree = "<group>"; };
-		168FA4012ACD618E000741DE /* RegistrationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTableViewCell.swift; sourceTree = "<group>"; };
+		168FA4012ACD618E000741DE /* UserRegistrationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationTableViewCell.swift; sourceTree = "<group>"; };
 		168FA4062AD01F0C000741DE /* GifLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifLoading.swift; sourceTree = "<group>"; };
 		168FA4092AD020CF000741DE /* DoubleRing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DoubleRing.gif; sourceTree = "<group>"; };
 		168FA40B2AD0216D000741DE /* ConfirmAccViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAccViewController.swift; sourceTree = "<group>"; };
+		168FA40F2AD14C24000741DE /* RegistrationCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCompanyViewController.swift; sourceTree = "<group>"; };
+		168FA4122AD14D64000741DE /* CompanyRegistrationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRegistrationTableViewCell.swift; sourceTree = "<group>"; };
 		16C3BB292AC58C6200DCCD56 /* OrtaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrtaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 				16723EEE2ACACE7800F76ED2 /* Entering */,
 				16723EFB2ACBE5A100F76ED2 /* ChooseRole */,
 				16723F002ACC6DF900F76ED2 /* RegistrationUser */,
+				168FA40E2AD14BFD000741DE /* RegistrationCompany */,
 				168FA40D2AD12780000741DE /* AccessAcc */,
 			);
 			path = Auth;
@@ -158,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				16723EFE2ACC060700F76ED2 /* RegistrationUserViewController.swift */,
-				168FA4012ACD618E000741DE /* RegistrationTableViewCell.swift */,
+				168FA4012ACD618E000741DE /* UserRegistrationTableViewCell.swift */,
 				168FA4062AD01F0C000741DE /* GifLoading.swift */,
 			);
 			path = View;
@@ -186,6 +191,23 @@
 				168FA40B2AD0216D000741DE /* ConfirmAccViewController.swift */,
 			);
 			path = AccessAcc;
+			sourceTree = "<group>";
+		};
+		168FA40E2AD14BFD000741DE /* RegistrationCompany */ = {
+			isa = PBXGroup;
+			children = (
+				168FA4112AD14C31000741DE /* View */,
+			);
+			path = RegistrationCompany;
+			sourceTree = "<group>";
+		};
+		168FA4112AD14C31000741DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				168FA40F2AD14C24000741DE /* RegistrationCompanyViewController.swift */,
+				168FA4122AD14D64000741DE /* CompanyRegistrationTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		16C3BB202AC58C6200DCCD56 = {
@@ -300,14 +322,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168FA4132AD14D64000741DE /* CompanyRegistrationTableViewCell.swift in Sources */,
 				16723EF02ACACEA700F76ED2 /* CustomTextField.swift in Sources */,
+				168FA4102AD14C24000741DE /* RegistrationCompanyViewController.swift in Sources */,
 				16723EF22ACAD21300F76ED2 /* AppImages.swift in Sources */,
 				16C3BB312AC58C6200DCCD56 /* AuthorizationViewController.swift in Sources */,
 				16723EF82ACBDA6300F76ED2 /* ChooseRoleViewController.swift in Sources */,
 				16723EE12ACAB43E00F76ED2 /* AppFont.swift in Sources */,
 				16723EFF2ACC060700F76ED2 /* RegistrationUserViewController.swift in Sources */,
 				16C3BB2D2AC58C6200DCCD56 /* AppDelegate.swift in Sources */,
-				168FA4022ACD618E000741DE /* RegistrationTableViewCell.swift in Sources */,
+				168FA4022ACD618E000741DE /* UserRegistrationTableViewCell.swift in Sources */,
 				168FA40C2AD0216D000741DE /* ConfirmAccViewController.swift in Sources */,
 				16C3BB2F2AC58C6200DCCD56 /* SceneDelegate.swift in Sources */,
 				16723EFD2ACBE8BE00F76ED2 /* OrganizationView.swift in Sources */,

@@ -127,7 +127,7 @@ final class ChooseRoleViewController: UIViewController {
 
     private func setupConstraints() {
         titleHeaderLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(111)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(8)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
         }

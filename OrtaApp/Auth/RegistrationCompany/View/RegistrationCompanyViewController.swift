@@ -1,32 +1,20 @@
 //
-//  RegistrationUserViewController.swift
+//  RegistrationCompanyViewController.swift
 //  OrtaApp
 //
-//  Created by Алишер Сайдешев on 03.10.2023.
+//  Created by Алишер Сайдешев on 07.10.2023.
 //
 
 import UIKit
 import SnapKit
 
-final class RegistrationUserViewController: UIViewController {
+final class RegistrationCompanyViewController: UIViewController {
 
     // MARK: Private Properties
 
     private var data: [RegistrationInfoModel] = []
 
     // MARK: - UI
-    private lazy var scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.isScrollEnabled = true
-        scrollView.showsVerticalScrollIndicator = false
-        return scrollView
-    }()
-
-    private lazy var contentView: UIView = {
-        let view = UIView()
-        return view
-    }()
-
     private lazy var registrationTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Регистрация"
@@ -41,23 +29,13 @@ final class RegistrationUserViewController: UIViewController {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UserRegistrationTableViewCell.self,
-                           forCellReuseIdentifier: UserRegistrationTableViewCell.cellID)
+        tableView.register(CompanyRegistrationTableViewCell.self,
+                           forCellReuseIdentifier: CompanyRegistrationTableViewCell.cellID)
         tableView.backgroundColor = .white
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 56
         tableView.separatorStyle = .none
         return tableView
-    }()
-
-    private lazy var confirmAgeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Продолжая я подтверждаю что мне \nисполнилось 16 лет"
-        label.font = AppFont.regular.s13()
-        label.textColor = AppColor.placeholderColor.uiColor
-        label.numberOfLines = 2
-        label.textAlignment = .center
-        return label
     }()
 
     private lazy var registrationButton: UIButton = {
@@ -110,36 +88,17 @@ final class RegistrationUserViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .white
 
-        [registrationTitleLabel, tableView, confirmAgeLabel,
+        [registrationTitleLabel, tableView,
          registrationButton, iHaveAccButton].forEach {
-            contentView.addSubview($0)
+            view.addSubview($0)
         }
-
-        scrollView.addSubview(contentView)
-
-        view.addSubview(scrollView)
     }
 
     // MARK: - Setup Constraints
 
     private func setupConstraints() {
-        scrollView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
-
-        contentView.snp.makeConstraints { make in
-            make.leading.equalTo(scrollView)
-            make.trailing.equalTo(scrollView)
-            make.top.equalTo(scrollView)
-            make.bottom.equalTo(scrollView)
-            make.width.equalTo(scrollView)
-        }
-
         registrationTitleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(8)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
         }
@@ -148,19 +107,11 @@ final class RegistrationUserViewController: UIViewController {
             make.top.equalTo(registrationTitleLabel.snp.bottom).offset(24)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
-            make.bottom.equalToSuperview()
-            make.height.equalTo(696)
-        }
-
-        confirmAgeLabel.snp.makeConstraints { make in
-            make.top.equalTo(tableView.snp.bottom).offset(24)
-            make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
-            make.height.equalTo(32)
+            make.height.equalTo(440)
         }
 
         registrationButton.snp.makeConstraints { make in
-            make.top.equalTo(confirmAgeLabel.snp.bottom).offset(16)
+            make.top.equalTo(tableView.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(64)
@@ -191,19 +142,21 @@ final class RegistrationUserViewController: UIViewController {
 }
 
 // MARK: - Delegate
-extension RegistrationUserViewController: UITableViewDelegate {
+extension RegistrationCompanyViewController: UITableViewDelegate {
 
 }
 
 // MARK: - Data Source
-extension RegistrationUserViewController: UITableViewDataSource {
+extension RegistrationCompanyViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 11
+        return 7
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserRegistrationTableViewCell.cellID,
-                                                       for: indexPath) as? UserRegistrationTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier:
+                                                        CompanyRegistrationTableViewCell.cellID,
+                                                       for: indexPath) as?
+                CompanyRegistrationTableViewCell else {
             fatalError("Could not cast to RegistrationTableViewCell")
         }
         return cell
@@ -214,7 +167,7 @@ extension RegistrationUserViewController: UITableViewDataSource {
     }
 }
 
-private extension RegistrationUserViewController {
+private extension RegistrationCompanyViewController {
     func createData() {
         data.append(
             RegistrationInfoModel(
@@ -275,10 +228,10 @@ private extension RegistrationUserViewController {
 }
 
 // MARK: - Hide Keyboard when screen Tapped
-extension RegistrationUserViewController {
+extension RegistrationCompanyViewController {
     func hideKeyboardWhenTappedAround() {
         let tap = UITapGestureRecognizer(target: self,
-                                         action: #selector(RegistrationUserViewController.dismissKeyboard))
+                                         action: #selector(RegistrationCompanyViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
@@ -287,3 +240,4 @@ extension RegistrationUserViewController {
         view.endEditing(true)
     }
 }
+
