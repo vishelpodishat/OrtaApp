@@ -9,4 +9,5 @@ import UIKit
 
 struct RegistrationInfoModel {
     let icon: UIImage?
+    let title: String
 }

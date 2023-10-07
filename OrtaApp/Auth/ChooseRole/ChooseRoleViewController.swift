@@ -115,7 +115,7 @@ final class ChooseRoleViewController: UIViewController {
     // MARK: - Setup Views
 
     private func setupViews() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .white
 
         [titleHeaderLabel, chooseRoleLabel, userTitleButton,
          organizationTitleButton, continueButton].forEach {

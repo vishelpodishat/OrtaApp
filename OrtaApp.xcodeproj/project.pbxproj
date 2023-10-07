@@ -25,6 +25,9 @@
 		16723F032ACC6E3300F76ED2 /* RegistrationInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723F022ACC6E3300F76ED2 /* RegistrationInfoModel.swift */; };
 		168FA4022ACD618E000741DE /* RegistrationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FA4012ACD618E000741DE /* RegistrationTableViewCell.swift */; };
 		168FA4052ACD74F8000741DE /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 168FA4042ACD74F8000741DE /* SkyFloatingLabelTextField */; };
+		168FA4072AD01F0C000741DE /* GifLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FA4062AD01F0C000741DE /* GifLoading.swift */; };
+		168FA40A2AD020CF000741DE /* DoubleRing.gif in Resources */ = {isa = PBXBuildFile; fileRef = 168FA4092AD020CF000741DE /* DoubleRing.gif */; };
+		168FA40C2AD0216D000741DE /* ConfirmAccViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FA40B2AD0216D000741DE /* ConfirmAccViewController.swift */; };
 		16C3BB2D2AC58C6200DCCD56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */; };
 		16C3BB2F2AC58C6200DCCD56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */; };
 		16C3BB312AC58C6200DCCD56 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB302AC58C6200DCCD56 /* AuthorizationViewController.swift */; };
@@ -50,6 +53,9 @@
 		16723EFE2ACC060700F76ED2 /* RegistrationUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUserViewController.swift; sourceTree = "<group>"; };
 		16723F022ACC6E3300F76ED2 /* RegistrationInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInfoModel.swift; sourceTree = "<group>"; };
 		168FA4012ACD618E000741DE /* RegistrationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTableViewCell.swift; sourceTree = "<group>"; };
+		168FA4062AD01F0C000741DE /* GifLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifLoading.swift; sourceTree = "<group>"; };
+		168FA4092AD020CF000741DE /* DoubleRing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DoubleRing.gif; sourceTree = "<group>"; };
+		168FA40B2AD0216D000741DE /* ConfirmAccViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAccViewController.swift; sourceTree = "<group>"; };
 		16C3BB292AC58C6200DCCD56 /* OrtaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrtaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +97,7 @@
 				16723EEE2ACACE7800F76ED2 /* Entering */,
 				16723EFB2ACBE5A100F76ED2 /* ChooseRole */,
 				16723F002ACC6DF900F76ED2 /* RegistrationUser */,
+				168FA40D2AD12780000741DE /* AccessAcc */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -98,6 +105,7 @@
 		16723EE82ACAB84600F76ED2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				168FA4082AD020B8000741DE /* Gifs */,
 				16C3BB382AC58C6400DCCD56 /* Assets.xcassets */,
 				16C3BB3A2AC58C6400DCCD56 /* LaunchScreen.storyboard */,
 				16723ED72ACAB42200F76ED2 /* Fonts */,
@@ -151,6 +159,7 @@
 			children = (
 				16723EFE2ACC060700F76ED2 /* RegistrationUserViewController.swift */,
 				168FA4012ACD618E000741DE /* RegistrationTableViewCell.swift */,
+				168FA4062AD01F0C000741DE /* GifLoading.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +170,22 @@
 				16723F022ACC6E3300F76ED2 /* RegistrationInfoModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		168FA4082AD020B8000741DE /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				168FA4092AD020CF000741DE /* DoubleRing.gif */,
+			);
+			path = Gifs;
+			sourceTree = "<group>";
+		};
+		168FA40D2AD12780000741DE /* AccessAcc */ = {
+			isa = PBXGroup;
+			children = (
+				168FA40B2AD0216D000741DE /* ConfirmAccViewController.swift */,
+			);
+			path = AccessAcc;
 			sourceTree = "<group>";
 		};
 		16C3BB202AC58C6200DCCD56 = {
@@ -264,6 +289,7 @@
 				16C3BB392AC58C6400DCCD56 /* Assets.xcassets in Resources */,
 				16723EDD2ACAB42200F76ED2 /* Inter-Bold.ttf in Resources */,
 				16723EDC2ACAB42200F76ED2 /* Inter-Medium.ttf in Resources */,
+				168FA40A2AD020CF000741DE /* DoubleRing.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +308,7 @@
 				16723EFF2ACC060700F76ED2 /* RegistrationUserViewController.swift in Sources */,
 				16C3BB2D2AC58C6200DCCD56 /* AppDelegate.swift in Sources */,
 				168FA4022ACD618E000741DE /* RegistrationTableViewCell.swift in Sources */,
+				168FA40C2AD0216D000741DE /* ConfirmAccViewController.swift in Sources */,
 				16C3BB2F2AC58C6200DCCD56 /* SceneDelegate.swift in Sources */,
 				16723EFD2ACBE8BE00F76ED2 /* OrganizationView.swift in Sources */,
 				16C3BB372AC58C6200DCCD56 /* OrtaApp.xcdatamodeld in Sources */,
@@ -289,6 +316,7 @@
 				16723EE62ACAB72300F76ED2 /* AppColor.swift in Sources */,
 				16723F032ACC6E3300F76ED2 /* RegistrationInfoModel.swift in Sources */,
 				16723EEB2ACAB8DA00F76ED2 /* AuthorizationBlueHeaderView.swift in Sources */,
+				168FA4072AD01F0C000741DE /* GifLoading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,7 +52,7 @@ final class RegistrationUserViewController: UIViewController {
 
     private lazy var confirmAgeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Продолжая я подтверждаю что мне исполнилось 16 лет"
+        label.text = "Продолжая я подтверждаю что мне \nисполнилось 16 лет"
         label.font = AppFont.regular.s13()
         label.textColor = AppColor.placeholderColor.uiColor
         label.numberOfLines = 2
@@ -110,12 +110,12 @@ final class RegistrationUserViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .white
 
-        scrollView.addSubview(contentView)
-
         [registrationTitleLabel, tableView, confirmAgeLabel,
          registrationButton, iHaveAccButton].forEach {
             contentView.addSubview($0)
         }
+
+        scrollView.addSubview(contentView)
 
         view.addSubview(scrollView)
     }
@@ -128,6 +128,7 @@ final class RegistrationUserViewController: UIViewController {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
+            make.height.equalTo(1241)
         }
 
         contentView.snp.makeConstraints { make in
@@ -139,7 +140,7 @@ final class RegistrationUserViewController: UIViewController {
         }
 
         registrationTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(8)
+            make.top.equalToSuperview()
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
         }
@@ -204,7 +205,7 @@ extension RegistrationUserViewController: UITableViewDataSource {
                                                        for: indexPath) as? RegistrationTableViewCell else {
             fatalError("Could not cast to RegistrationTableViewCell")
         }
-        return cell 
+        return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -215,7 +216,60 @@ extension RegistrationUserViewController: UITableViewDataSource {
 private extension RegistrationUserViewController {
     func createData() {
         data.append(
-            RegistrationInfoModel(icon: AppImage.personImage.uiImage))
+            RegistrationInfoModel(
+                icon: AppImage.personImage.uiImage,
+                title: "Имя")
+        )
+        data.append(
+            RegistrationInfoModel(
+                icon: AppImage.profileUsers.uiImage,
+                title: "Фамилия")
+        )
+        data.append(
+            RegistrationInfoModel(
+                icon: AppImage.cake.uiImage,
+                title: "Дата рождения")
+        )
+        data.append(
+            RegistrationInfoModel(
+                icon: AppImage.smsEdit.uiImage,
+                title: "Почта")
+        )
+        data.append(
+            RegistrationInfoModel(
+                icon: AppImage.passwordCheck.uiImage,
+                title: "Пароль")
+        )
+        data.append(
+            RegistrationInfoModel(
+                icon: AppImage.passwordCheck.uiImage,
+                title: "Подтверждение пароля")
+        )
+        data.append(
+            RegistrationInfoModel(
+                icon: AppImage.call.uiImage,
+                title: "Номер телефона")
+        )
+        data.append(
+            RegistrationInfoModel(
+                icon: AppImage.home.uiImage,
+                title: "Город проживания")
+        )
+        data.append(
+            RegistrationInfoModel(
+                icon: AppImage.location.uiImage,
+                title: "Город обучения")
+        )
+        data.append(
+            RegistrationInfoModel(
+                icon: AppImage.calendarTick.uiImage,
+                title: "Год окончания")
+        )
+        data.append(
+            RegistrationInfoModel(
+                icon: AppImage.link.uiImage,
+                title: "Ссылка на linkedin")
+        )
     }
 }
 
