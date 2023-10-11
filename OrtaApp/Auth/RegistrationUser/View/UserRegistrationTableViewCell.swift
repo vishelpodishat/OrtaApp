@@ -53,6 +53,14 @@ final class UserRegistrationTableViewCell: UITableViewCell {
         setupConstraints()
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        customTextField.frame = frame.inset(by: UIEdgeInsets(top: 8,
+                                                             left: 0,
+                                                             bottom: 0,
+                                                             right: 0))
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -74,6 +82,14 @@ final class UserRegistrationTableViewCell: UITableViewCell {
             make.height.equalTo(56)
         }
     }
+
+    // MARK: - Public Configure
+
+    public func configureCell(with model: RegistrationInfoModel) {
+//        customTextField.ima = model.icon
+        customTextField.attributedPlaceholder = NSAttributedString(
+            string: model.title)
+    }
 }
 
 extension UserRegistrationTableViewCell: UITextFieldDelegate {
@@ -85,7 +101,7 @@ extension UserRegistrationTableViewCell: UITextFieldDelegate {
         if let text = textfield.text {
             if let floatingLabelTextField = textfield as? SkyFloatingLabelTextField {
                 if(text.count < 3 || !text.contains("@")) {
-                    floatingLabelTextField.errorMessage = "Invalid email"
+                    floatingLabelTextField.errorMessage = "Invalid value"
                 }
                 else {
                     floatingLabelTextField.errorMessage = ""

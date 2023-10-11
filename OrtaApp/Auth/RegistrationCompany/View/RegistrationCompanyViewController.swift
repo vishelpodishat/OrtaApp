@@ -70,6 +70,7 @@ final class RegistrationCompanyViewController: UIViewController {
         setupConstraints()
         setupNavigationBar()
         hideKeyboardWhenTappedAround()
+        createData()
     }
 
     // MARK: - Setup Navigation Controller
@@ -158,7 +159,7 @@ extension RegistrationCompanyViewController: UITableViewDataSource {
                                                        for: indexPath) as?
                 CompanyRegistrationTableViewCell else {
             fatalError("Could not cast to RegistrationTableViewCell")
-        }
+        } 
         return cell
     }
 

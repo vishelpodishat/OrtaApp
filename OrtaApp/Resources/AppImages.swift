@@ -44,5 +44,15 @@ enum AppImage: String, AppImageProtocol {
     case call
     case calendarTick
     case cake
+    case homeTabBar
+    case chatTabBar
+    case notificationTabBar
+    case searchTabBar
+    case vacanciesTabBar
+    case chatFullTabBar
+    case homeFullTabBar
+    case notificationFullTabBar
+    case searchFullTabBar
+    case vacanciesFullTabBar
 }
 

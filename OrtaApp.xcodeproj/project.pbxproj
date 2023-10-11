@@ -23,6 +23,15 @@
 		16723EFD2ACBE8BE00F76ED2 /* OrganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723EFC2ACBE8BE00F76ED2 /* OrganizationView.swift */; };
 		16723EFF2ACC060700F76ED2 /* RegistrationUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723EFE2ACC060700F76ED2 /* RegistrationUserViewController.swift */; };
 		16723F032ACC6E3300F76ED2 /* RegistrationInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16723F022ACC6E3300F76ED2 /* RegistrationInfoModel.swift */; };
+		168CBB262AD69F3800F8E8EC /* RegistrationTextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CBB252AD69F3800F8E8EC /* RegistrationTextFieldType.swift */; };
+		168CBB292AD6B20800F8E8EC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CBB282AD6B20800F8E8EC /* TabBarController.swift */; };
+		168CBB2B2AD6B2B900F8E8EC /* HomeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CBB2A2AD6B2B900F8E8EC /* HomeMainViewController.swift */; };
+		168CBB2D2AD6B2E300F8E8EC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CBB2C2AD6B2E300F8E8EC /* SearchViewController.swift */; };
+		168CBB2F2AD6B30F00F8E8EC /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CBB2E2AD6B30F00F8E8EC /* ChatsViewController.swift */; };
+		168CBB312AD6B34700F8E8EC /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CBB302AD6B34700F8E8EC /* NotificationsViewController.swift */; };
+		168CBB332AD6B38500F8E8EC /* VacanciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CBB322AD6B38500F8E8EC /* VacanciesViewController.swift */; };
+		168CBB352AD6B6B400F8E8EC /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CBB342AD6B6B400F8E8EC /* TabBarItem.swift */; };
+		168CBB372AD6C41900F8E8EC /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CBB362AD6C41900F8E8EC /* CustomTabBar.swift */; };
 		168FA4022ACD618E000741DE /* UserRegistrationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FA4012ACD618E000741DE /* UserRegistrationTableViewCell.swift */; };
 		168FA4052ACD74F8000741DE /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 168FA4042ACD74F8000741DE /* SkyFloatingLabelTextField */; };
 		168FA4072AD01F0C000741DE /* GifLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FA4062AD01F0C000741DE /* GifLoading.swift */; };
@@ -54,6 +63,15 @@
 		16723EFC2ACBE8BE00F76ED2 /* OrganizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationView.swift; sourceTree = "<group>"; };
 		16723EFE2ACC060700F76ED2 /* RegistrationUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUserViewController.swift; sourceTree = "<group>"; };
 		16723F022ACC6E3300F76ED2 /* RegistrationInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInfoModel.swift; sourceTree = "<group>"; };
+		168CBB252AD69F3800F8E8EC /* RegistrationTextFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTextFieldType.swift; sourceTree = "<group>"; };
+		168CBB282AD6B20800F8E8EC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		168CBB2A2AD6B2B900F8E8EC /* HomeMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainViewController.swift; sourceTree = "<group>"; };
+		168CBB2C2AD6B2E300F8E8EC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		168CBB2E2AD6B30F00F8E8EC /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		168CBB302AD6B34700F8E8EC /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		168CBB322AD6B38500F8E8EC /* VacanciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesViewController.swift; sourceTree = "<group>"; };
+		168CBB342AD6B6B400F8E8EC /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		168CBB362AD6C41900F8E8EC /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		168FA4012ACD618E000741DE /* UserRegistrationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationTableViewCell.swift; sourceTree = "<group>"; };
 		168FA4062AD01F0C000741DE /* GifLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifLoading.swift; sourceTree = "<group>"; };
 		168FA4092AD020CF000741DE /* DoubleRing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DoubleRing.gif; sourceTree = "<group>"; };
@@ -173,8 +191,24 @@
 			isa = PBXGroup;
 			children = (
 				16723F022ACC6E3300F76ED2 /* RegistrationInfoModel.swift */,
+				168CBB252AD69F3800F8E8EC /* RegistrationTextFieldType.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		168CBB272AD6B1AB00F8E8EC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				168CBB282AD6B20800F8E8EC /* TabBarController.swift */,
+				168CBB342AD6B6B400F8E8EC /* TabBarItem.swift */,
+				168CBB362AD6C41900F8E8EC /* CustomTabBar.swift */,
+				168CBB2A2AD6B2B900F8E8EC /* HomeMainViewController.swift */,
+				168CBB2C2AD6B2E300F8E8EC /* SearchViewController.swift */,
+				168CBB2E2AD6B30F00F8E8EC /* ChatsViewController.swift */,
+				168CBB302AD6B34700F8E8EC /* NotificationsViewController.swift */,
+				168CBB322AD6B38500F8E8EC /* VacanciesViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		168FA4082AD020B8000741DE /* Gifs */ = {
@@ -231,6 +265,7 @@
 			children = (
 				16723EE92ACAB85E00F76ED2 /* AppConstruts */,
 				16723EE72ACAB80800F76ED2 /* Auth */,
+				168CBB272AD6B1AB00F8E8EC /* Main */,
 				16C3BB352AC58C6200DCCD56 /* OrtaApp.xcdatamodeld */,
 				16723EE82ACAB84600F76ED2 /* Resources */,
 				16C3BB3D2AC58C6400DCCD56 /* Info.plist */,
@@ -326,6 +361,8 @@
 				16723EF02ACACEA700F76ED2 /* CustomTextField.swift in Sources */,
 				168FA4102AD14C24000741DE /* RegistrationCompanyViewController.swift in Sources */,
 				16723EF22ACAD21300F76ED2 /* AppImages.swift in Sources */,
+				168CBB2B2AD6B2B900F8E8EC /* HomeMainViewController.swift in Sources */,
+				168CBB312AD6B34700F8E8EC /* NotificationsViewController.swift in Sources */,
 				16C3BB312AC58C6200DCCD56 /* AuthorizationViewController.swift in Sources */,
 				16723EF82ACBDA6300F76ED2 /* ChooseRoleViewController.swift in Sources */,
 				16723EE12ACAB43E00F76ED2 /* AppFont.swift in Sources */,
@@ -334,12 +371,19 @@
 				168FA4022ACD618E000741DE /* UserRegistrationTableViewCell.swift in Sources */,
 				168FA40C2AD0216D000741DE /* ConfirmAccViewController.swift in Sources */,
 				16C3BB2F2AC58C6200DCCD56 /* SceneDelegate.swift in Sources */,
+				168CBB2D2AD6B2E300F8E8EC /* SearchViewController.swift in Sources */,
 				16723EFD2ACBE8BE00F76ED2 /* OrganizationView.swift in Sources */,
+				168CBB372AD6C41900F8E8EC /* CustomTabBar.swift in Sources */,
 				16C3BB372AC58C6200DCCD56 /* OrtaApp.xcdatamodeld in Sources */,
 				16723EFA2ACBDC2E00F76ED2 /* UserView.swift in Sources */,
 				16723EE62ACAB72300F76ED2 /* AppColor.swift in Sources */,
+				168CBB262AD69F3800F8E8EC /* RegistrationTextFieldType.swift in Sources */,
+				168CBB332AD6B38500F8E8EC /* VacanciesViewController.swift in Sources */,
+				168CBB352AD6B6B400F8E8EC /* TabBarItem.swift in Sources */,
 				16723F032ACC6E3300F76ED2 /* RegistrationInfoModel.swift in Sources */,
+				168CBB292AD6B20800F8E8EC /* TabBarController.swift in Sources */,
 				16723EEB2ACAB8DA00F76ED2 /* AuthorizationBlueHeaderView.swift in Sources */,
+				168CBB2F2AD6B30F00F8E8EC /* ChatsViewController.swift in Sources */,
 				168FA4072AD01F0C000741DE /* GifLoading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

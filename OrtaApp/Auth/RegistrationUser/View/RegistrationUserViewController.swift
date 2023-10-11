@@ -12,7 +12,8 @@ final class RegistrationUserViewController: UIViewController {
 
     // MARK: Private Properties
 
-    private var data: [RegistrationInfoModel] = []
+    private var viewModel = [RegistrationInfoModel]()
+    private var type: [RegistrationTextFieldType] = []
 
     // MARK: - UI
     private lazy var scrollView: UIScrollView = {
@@ -92,6 +93,7 @@ final class RegistrationUserViewController: UIViewController {
         setupConstraints()
         setupNavigationBar()
         hideKeyboardWhenTappedAround()
+        createData()
     }
 
     // MARK: - Setup Navigation Controller
@@ -198,7 +200,7 @@ extension RegistrationUserViewController: UITableViewDelegate {
 // MARK: - Data Source
 extension RegistrationUserViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 11
+        return viewModel.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -206,6 +208,7 @@ extension RegistrationUserViewController: UITableViewDataSource {
                                                        for: indexPath) as? UserRegistrationTableViewCell else {
             fatalError("Could not cast to RegistrationTableViewCell")
         }
+        cell.configureCell(with: viewModel[indexPath.row])
         return cell
     }
 
@@ -216,57 +219,60 @@ extension RegistrationUserViewController: UITableViewDataSource {
 
 private extension RegistrationUserViewController {
     func createData() {
-        data.append(
+        [.birthday, .password, .text].forEach {
+            type.append($0)
+        }
+        viewModel.append(
             RegistrationInfoModel(
                 icon: AppImage.personImage.uiImage,
                 title: "Имя")
         )
-        data.append(
+        viewModel.append(
             RegistrationInfoModel(
                 icon: AppImage.profileUsers.uiImage,
                 title: "Фамилия")
         )
-        data.append(
+        viewModel.append(
             RegistrationInfoModel(
                 icon: AppImage.cake.uiImage,
                 title: "Дата рождения")
         )
-        data.append(
+        viewModel.append(
             RegistrationInfoModel(
                 icon: AppImage.smsEdit.uiImage,
                 title: "Почта")
         )
-        data.append(
+        viewModel.append(
             RegistrationInfoModel(
                 icon: AppImage.passwordCheck.uiImage,
                 title: "Пароль")
         )
-        data.append(
+        viewModel.append(
             RegistrationInfoModel(
                 icon: AppImage.passwordCheck.uiImage,
                 title: "Подтверждение пароля")
         )
-        data.append(
+        viewModel.append(
             RegistrationInfoModel(
                 icon: AppImage.call.uiImage,
                 title: "Номер телефона")
         )
-        data.append(
+        viewModel.append(
             RegistrationInfoModel(
                 icon: AppImage.home.uiImage,
                 title: "Город проживания")
         )
-        data.append(
+        viewModel.append(
             RegistrationInfoModel(
                 icon: AppImage.location.uiImage,
                 title: "Город обучения")
         )
-        data.append(
+        viewModel.append(
             RegistrationInfoModel(
                 icon: AppImage.calendarTick.uiImage,
                 title: "Год окончания")
         )
-        data.append(
+        viewModel.append(
             RegistrationInfoModel(
                 icon: AppImage.link.uiImage,
                 title: "Ссылка на linkedin")
