@@ -31,6 +31,8 @@ final class UserRegistrationTableViewCell: UITableViewCell {
         textField.selectedTitleColor = AppColor.placeholderColor.uiColor
         textField.selectedLineHeight = 1.0
         textField.selectedLineColor = AppColor.placeholderColor.uiColor
+        textField.errorColor = AppColor.red.uiColor
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.textAlignment = .left
         textField.attributedPlaceholder = NSAttributedString(string: "Email",
                                                              attributes:
@@ -77,5 +79,18 @@ final class UserRegistrationTableViewCell: UITableViewCell {
 extension UserRegistrationTableViewCell: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return true
+    }
+
+     @objc private func textFieldDidChange(_ textfield: UITextField) {
+        if let text = textfield.text {
+            if let floatingLabelTextField = textfield as? SkyFloatingLabelTextField {
+                if(text.count < 3 || !text.contains("@")) {
+                    floatingLabelTextField.errorMessage = "Invalid email"
+                }
+                else {
+                    floatingLabelTextField.errorMessage = ""
+                }
+            }
+        }
     }
 }

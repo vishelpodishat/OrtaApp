@@ -59,17 +59,17 @@ final class ConfirmAccViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
-    // MARK: - Timer Action
-    let timer = Timer.scheduledTimer(timeInterval: 3,
-                                     target: nil,
-                                     selector: #selector(showVC),
-                                     userInfo: nil,
-                                     repeats: false)
-
-    @objc private func showVC() {
-        let controller = AuthorizationViewController()
-        self.present(controller, animated: true)
-    }
+//    // MARK: - Timer Action
+//    let timer = Timer.scheduledTimer(timeInterval: 3,
+//                                     target: nil,
+//                                     selector: #selector(showVC),
+//                                     userInfo: nil,
+//                                     repeats: false)
+//
+//    @objc private func showVC() {
+//        let controller = AuthorizationViewController()
+//        self.present(controller, animated: true)
+//    }
 
     // MARK: - Setup Views
 
