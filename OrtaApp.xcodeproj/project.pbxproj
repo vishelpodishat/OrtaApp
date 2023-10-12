@@ -199,14 +199,12 @@
 		168CBB272AD6B1AB00F8E8EC /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				168CBB282AD6B20800F8E8EC /* TabBarController.swift */,
-				168CBB342AD6B6B400F8E8EC /* TabBarItem.swift */,
-				168CBB362AD6C41900F8E8EC /* CustomTabBar.swift */,
-				168CBB2A2AD6B2B900F8E8EC /* HomeMainViewController.swift */,
-				168CBB2C2AD6B2E300F8E8EC /* SearchViewController.swift */,
-				168CBB2E2AD6B30F00F8E8EC /* ChatsViewController.swift */,
-				168CBB302AD6B34700F8E8EC /* NotificationsViewController.swift */,
-				168CBB322AD6B38500F8E8EC /* VacanciesViewController.swift */,
+				16D422452AD7EBD100F4ADB3 /* TabBar */,
+				16D422442AD7EBC500F4ADB3 /* Home */,
+				16D422462AD7EBDA00F4ADB3 /* Search */,
+				16D422472AD7EBDF00F4ADB3 /* Chats */,
+				16D422482AD7EBE500F4ADB3 /* Notifications */,
+				16D422492AD7EBF100F4ADB3 /* Vacancies */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -271,6 +269,56 @@
 				16C3BB3D2AC58C6400DCCD56 /* Info.plist */,
 			);
 			path = OrtaApp;
+			sourceTree = "<group>";
+		};
+		16D422442AD7EBC500F4ADB3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				168CBB2A2AD6B2B900F8E8EC /* HomeMainViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		16D422452AD7EBD100F4ADB3 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				168CBB282AD6B20800F8E8EC /* TabBarController.swift */,
+				168CBB342AD6B6B400F8E8EC /* TabBarItem.swift */,
+				168CBB362AD6C41900F8E8EC /* CustomTabBar.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		16D422462AD7EBDA00F4ADB3 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				168CBB2C2AD6B2E300F8E8EC /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		16D422472AD7EBDF00F4ADB3 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				168CBB2E2AD6B30F00F8E8EC /* ChatsViewController.swift */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		16D422482AD7EBE500F4ADB3 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				168CBB302AD6B34700F8E8EC /* NotificationsViewController.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		16D422492AD7EBF100F4ADB3 /* Vacancies */ = {
+			isa = PBXGroup;
+			children = (
+				168CBB322AD6B38500F8E8EC /* VacanciesViewController.swift */,
+			);
+			path = Vacancies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
