@@ -29,4 +29,5 @@ enum AppColor: String, AppColorProtocol {
     case doesnthaveAccount
     case underLineColor
     case red
+    case backgroundMain
 }

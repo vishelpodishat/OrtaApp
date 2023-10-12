@@ -13,14 +13,7 @@ final class CustomTabBar: UITabBar {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        let raisedYPosition = frame.origin.y - 20
-        let raisedFrame = CGRect(x: frame.origin.x,
-                                 y: raisedYPosition,
-                                 width: frame.size.width,
-                                 height: frame.size.height + 20)
-
         setup()
-        //        setupConstraints()
     }
 
     required init?(coder: NSCoder) { nil }
@@ -31,6 +24,5 @@ final class CustomTabBar: UITabBar {
         layer.masksToBounds = true
         layer.cornerRadius = 20
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        //        frame = CGRect(x: 10, y: 10, width: 348, height: 56)
     }
 }
