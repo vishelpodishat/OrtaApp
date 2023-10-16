@@ -57,5 +57,10 @@ enum AppImage: String, AppImageProtocol {
     case searchVacancies
     case filter
     case addButton
+    case adminImageLogo
+    case arrowDown
+    case timeAdminButton
+    case deleteAdminButton
+    case checkAdminButton
 }
 

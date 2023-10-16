@@ -46,6 +46,10 @@
 		16C3BB392AC58C6400DCCD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16C3BB382AC58C6400DCCD56 /* Assets.xcassets */; };
 		16C3BB3C2AC58C6400DCCD56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C3BB3A2AC58C6400DCCD56 /* LaunchScreen.storyboard */; };
 		16D4224B2AD7FA1900F4ADB3 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4224A2AD7FA1900F4ADB3 /* NavigationView.swift */; };
+		16D4224E2ADCF35800F4ADB3 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4224D2ADCF35800F4ADB3 /* AdminViewController.swift */; };
+		16D422502ADCFE9B00F4ADB3 /* AdminCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4224F2ADCFE9B00F4ADB3 /* AdminCollectionViewCell.swift */; };
+		16D422522ADD37F100F4ADB3 /* BanCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D422512ADD37F100F4ADB3 /* BanCaseView.swift */; };
+		16D422552ADD3B3800F4ADB3 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 16D422542ADD3B3800F4ADB3 /* PanModal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +92,9 @@
 		16C3BB3B2AC58C6400DCCD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16C3BB3D2AC58C6400DCCD56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16D4224A2AD7FA1900F4ADB3 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		16D4224D2ADCF35800F4ADB3 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		16D4224F2ADCFE9B00F4ADB3 /* AdminCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCollectionViewCell.swift; sourceTree = "<group>"; };
+		16D422512ADD37F100F4ADB3 /* BanCaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanCaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +104,7 @@
 			files = (
 				16723EE42ACAB6B400F76ED2 /* SnapKit in Frameworks */,
 				168FA4052ACD74F8000741DE /* SkyFloatingLabelTextField in Frameworks */,
+				16D422552ADD3B3800F4ADB3 /* PanModal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,13 +149,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		16723EE92ACAB85E00F76ED2 /* AppConstruts */ = {
+		16723EE92ACAB85E00F76ED2 /* AppConstructs */ = {
 			isa = PBXGroup;
 			children = (
 				16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */,
 				16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */,
 			);
-			path = AppConstruts;
+			path = AppConstructs;
 			sourceTree = "<group>";
 		};
 		16723EEE2ACACE7800F76ED2 /* Entering */ = {
@@ -263,9 +271,9 @@
 		16C3BB2B2AC58C6200DCCD56 /* OrtaApp */ = {
 			isa = PBXGroup;
 			children = (
-				16D4224C2ADCF25000F4ADB3 /* Admin */,
-				16723EE92ACAB85E00F76ED2 /* AppConstruts */,
+				16723EE92ACAB85E00F76ED2 /* AppConstructs */,
 				16723EE72ACAB80800F76ED2 /* Auth */,
+				16D4224C2ADCF25000F4ADB3 /* Admin */,
 				168CBB272AD6B1AB00F8E8EC /* Main */,
 				16C3BB352AC58C6200DCCD56 /* OrtaApp.xcdatamodeld */,
 				16723EE82ACAB84600F76ED2 /* Resources */,
@@ -328,6 +336,9 @@
 		16D4224C2ADCF25000F4ADB3 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				16D4224D2ADCF35800F4ADB3 /* AdminViewController.swift */,
+				16D4224F2ADCFE9B00F4ADB3 /* AdminCollectionViewCell.swift */,
+				16D422512ADD37F100F4ADB3 /* BanCaseView.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -351,6 +362,7 @@
 			packageProductDependencies = (
 				16723EE32ACAB6B400F76ED2 /* SnapKit */,
 				168FA4042ACD74F8000741DE /* SkyFloatingLabelTextField */,
+				16D422542ADD3B3800F4ADB3 /* PanModal */,
 			);
 			productName = OrtaApp;
 			productReference = 16C3BB292AC58C6200DCCD56 /* OrtaApp.app */;
@@ -383,6 +395,7 @@
 			packageReferences = (
 				16723EE22ACAB6B400F76ED2 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				168FA4032ACD74F8000741DE /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */,
+				16D422532ADD3B3800F4ADB3 /* XCRemoteSwiftPackageReference "PanModal" */,
 			);
 			productRefGroup = 16C3BB2A2AC58C6200DCCD56 /* Products */;
 			projectDirPath = "";
@@ -425,6 +438,7 @@
 				168CBB312AD6B34700F8E8EC /* NotificationsViewController.swift in Sources */,
 				16C3BB312AC58C6200DCCD56 /* AuthorizationViewController.swift in Sources */,
 				16723EF82ACBDA6300F76ED2 /* ChooseRoleViewController.swift in Sources */,
+				16D422502ADCFE9B00F4ADB3 /* AdminCollectionViewCell.swift in Sources */,
 				16723EE12ACAB43E00F76ED2 /* AppFont.swift in Sources */,
 				16723EFF2ACC060700F76ED2 /* RegistrationUserViewController.swift in Sources */,
 				16C3BB2D2AC58C6200DCCD56 /* AppDelegate.swift in Sources */,
@@ -434,6 +448,8 @@
 				168CBB2D2AD6B2E300F8E8EC /* SearchViewController.swift in Sources */,
 				16723EFD2ACBE8BE00F76ED2 /* OrganizationView.swift in Sources */,
 				168CBB372AD6C41900F8E8EC /* CustomTabBar.swift in Sources */,
+				16D4224E2ADCF35800F4ADB3 /* AdminViewController.swift in Sources */,
+				16D422522ADD37F100F4ADB3 /* BanCaseView.swift in Sources */,
 				16C3BB372AC58C6200DCCD56 /* OrtaApp.xcdatamodeld in Sources */,
 				16723EFA2ACBDC2E00F76ED2 /* UserView.swift in Sources */,
 				16723EE62ACAB72300F76ED2 /* AppColor.swift in Sources */,
@@ -672,6 +688,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		16D422532ADD3B3800F4ADB3 /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -684,6 +708,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 168FA4032ACD74F8000741DE /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */;
 			productName = SkyFloatingLabelTextField;
+		};
+		16D422542ADD3B3800F4ADB3 /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16D422532ADD3B3800F4ADB3 /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
 		};
 /* End XCSwiftPackageProductDependency section */
 
