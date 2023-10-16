@@ -54,5 +54,8 @@ enum AppImage: String, AppImageProtocol {
     case notificationFullTabBar
     case searchFullTabBar
     case vacanciesFullTabBar
+    case searchVacancies
+    case filter
+    case addButton
 }
 

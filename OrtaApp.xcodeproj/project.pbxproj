@@ -45,6 +45,7 @@
 		16C3BB372AC58C6200DCCD56 /* OrtaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB352AC58C6200DCCD56 /* OrtaApp.xcdatamodeld */; };
 		16C3BB392AC58C6400DCCD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16C3BB382AC58C6400DCCD56 /* Assets.xcassets */; };
 		16C3BB3C2AC58C6400DCCD56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C3BB3A2AC58C6400DCCD56 /* LaunchScreen.storyboard */; };
+		16D4224B2AD7FA1900F4ADB3 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4224A2AD7FA1900F4ADB3 /* NavigationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		16C3BB382AC58C6400DCCD56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16C3BB3B2AC58C6400DCCD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16C3BB3D2AC58C6400DCCD56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16D4224A2AD7FA1900F4ADB3 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 		16C3BB2B2AC58C6200DCCD56 /* OrtaApp */ = {
 			isa = PBXGroup;
 			children = (
+				16D4224C2ADCF25000F4ADB3 /* Admin */,
 				16723EE92ACAB85E00F76ED2 /* AppConstruts */,
 				16723EE72ACAB80800F76ED2 /* Auth */,
 				168CBB272AD6B1AB00F8E8EC /* Main */,
@@ -317,8 +320,16 @@
 			isa = PBXGroup;
 			children = (
 				168CBB322AD6B38500F8E8EC /* VacanciesViewController.swift */,
+				16D4224A2AD7FA1900F4ADB3 /* NavigationView.swift */,
 			);
 			path = Vacancies;
+			sourceTree = "<group>";
+		};
+		16D4224C2ADCF25000F4ADB3 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Admin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +418,7 @@
 			files = (
 				168FA4132AD14D64000741DE /* CompanyRegistrationTableViewCell.swift in Sources */,
 				16723EF02ACACEA700F76ED2 /* CustomTextField.swift in Sources */,
+				16D4224B2AD7FA1900F4ADB3 /* NavigationView.swift in Sources */,
 				168FA4102AD14C24000741DE /* RegistrationCompanyViewController.swift in Sources */,
 				16723EF22ACAD21300F76ED2 /* AppImages.swift in Sources */,
 				168CBB2B2AD6B2B900F8E8EC /* HomeMainViewController.swift in Sources */,

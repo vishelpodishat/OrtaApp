@@ -45,6 +45,10 @@ extension AppFontProtocol {
         return apply(size: 18)
     }
 
+    func s19() -> UIFont {
+        return apply(size: 19)
+    }
+
     func s20() -> UIFont {
         return apply(size: 20)
     }
