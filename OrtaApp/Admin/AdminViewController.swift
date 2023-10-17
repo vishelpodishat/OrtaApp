@@ -11,7 +11,7 @@ import SnapKit
 final class AdminViewController: UIViewController {
 
     // MARK: - Properties
-    private var selectedIndexPath: IndexPath?
+    private var selectedIndexPath: IndexPath? 
 
     // MARK: - UI
     private lazy var adminPhotoImageView: UIImageView = {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		166DB1142ADF1E2D00E1A255 /* PopUpBanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166DB1132ADF1E2D00E1A255 /* PopUpBanController.swift */; };
 		16723EDC2ACAB42200F76ED2 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16723ED82ACAB42200F76ED2 /* Inter-Medium.ttf */; };
 		16723EDD2ACAB42200F76ED2 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16723ED92ACAB42200F76ED2 /* Inter-Bold.ttf */; };
 		16723EDE2ACAB42200F76ED2 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16723EDA2ACAB42200F76ED2 /* Inter-Regular.ttf */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		166DB1132ADF1E2D00E1A255 /* PopUpBanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpBanController.swift; sourceTree = "<group>"; };
 		16723ED82ACAB42200F76ED2 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
 		16723ED92ACAB42200F76ED2 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		16723EDA2ACAB42200F76ED2 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				16D4224D2ADCF35800F4ADB3 /* AdminViewController.swift */,
 				16D4224F2ADCFE9B00F4ADB3 /* AdminCollectionViewCell.swift */,
 				16D422512ADD37F100F4ADB3 /* BanCaseView.swift */,
+				166DB1132ADF1E2D00E1A255 /* PopUpBanController.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				166DB1142ADF1E2D00E1A255 /* PopUpBanController.swift in Sources */,
 				168FA4132AD14D64000741DE /* CompanyRegistrationTableViewCell.swift in Sources */,
 				16723EF02ACACEA700F76ED2 /* CustomTextField.swift in Sources */,
 				16D4224B2AD7FA1900F4ADB3 /* NavigationView.swift in Sources */,

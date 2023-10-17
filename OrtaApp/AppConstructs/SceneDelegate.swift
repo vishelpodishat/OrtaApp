@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         window?.rootViewController =
 //        TabBarController()
-        UINavigationController(rootViewController: AdminViewController())
+        UINavigationController(rootViewController: PopUpBanController())
         window?.makeKeyAndVisible()
     }
 }
