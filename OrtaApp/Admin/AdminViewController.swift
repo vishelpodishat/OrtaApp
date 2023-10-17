@@ -46,6 +46,31 @@ final class AdminViewController: UIViewController {
         return view
     }()
     
+    private lazy var deleteAdminButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(AppImage.deleteAdminButton.uiImage, for: .normal)
+        return button
+    }()
+
+    private lazy var timeAdminButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(AppImage.timeAdminButton.uiImage, for: .normal)
+        return button
+    }()
+
+    private lazy var checkAdminButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(AppImage.checkAdminButton.uiImage, for: .normal)
+        return button
+    }()
+
+    private lazy var buttonsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.spacing = 40
+        return stackView
+    }()
 
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -65,9 +90,14 @@ final class AdminViewController: UIViewController {
 
     private func setupViews() {
         view.backgroundColor = .white
+        
+        [deleteAdminButton, timeAdminButton, checkAdminButton].forEach {
+            buttonsStackView.addArrangedSubview($0)
+        }
 
-        view.addSubview(collectionView)
-        view.addSubview(casesView)
+        [collectionView, casesView, buttonsStackView].forEach {
+            view.addSubview($0)
+        }
     }
 
     // MARK: - Setup Constraints
@@ -83,6 +113,12 @@ final class AdminViewController: UIViewController {
         casesView.snp.makeConstraints { make in
             make.top.equalTo(collectionView.snp.bottom)
             make.leading.trailing.equalToSuperview()
+        }
+
+        buttonsStackView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(35)
+            make.trailing.equalToSuperview().offset(-35)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(40)
         }
 
         adminPhotoImageView.snp.makeConstraints { make in
