@@ -7,11 +7,13 @@
 
 import UIKit
 import SnapKit
+import PanModal
 
 final class AdminViewController: UIViewController {
 
     // MARK: - Properties
-    private var selectedIndexPath: IndexPath? 
+    private var items: [AdminCollectionType] = []
+    private var selectedIndexPath: IndexPath?
 
     // MARK: - UI
     private lazy var adminPhotoImageView: UIImageView = {
@@ -49,6 +51,7 @@ final class AdminViewController: UIViewController {
     private lazy var deleteAdminButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(AppImage.deleteAdminButton.uiImage, for: .normal)
+        button.addTarget(self, action: #selector(didPressedBanButton), for: .touchUpInside)
         return button
     }()
 
@@ -67,7 +70,7 @@ final class AdminViewController: UIViewController {
     private lazy var buttonsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
         stackView.spacing = 40
         return stackView
     }()
@@ -120,6 +123,18 @@ final class AdminViewController: UIViewController {
             make.trailing.equalToSuperview().offset(-35)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(40)
         }
+        
+        deleteAdminButton.snp.makeConstraints { make in
+            make.size.equalTo(80)
+        }
+
+        timeAdminButton.snp.makeConstraints { make in
+            make.size.equalTo(80)
+        }
+
+        checkAdminButton.snp.makeConstraints { make in
+            make.size.equalTo(80)
+        }
 
         adminPhotoImageView.snp.makeConstraints { make in
             make.size.equalTo(40)
@@ -135,6 +150,13 @@ final class AdminViewController: UIViewController {
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         return layout
+    }
+
+    // MARK: - Actions
+
+    @objc private func didPressedBanButton() {
+        let controller = PopUpBanController()
+        presentPanModal(controller)
     }
 }
 

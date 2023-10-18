@@ -51,6 +51,7 @@
 		16D422502ADCFE9B00F4ADB3 /* AdminCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4224F2ADCFE9B00F4ADB3 /* AdminCollectionViewCell.swift */; };
 		16D422522ADD37F100F4ADB3 /* BanCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D422512ADD37F100F4ADB3 /* BanCaseView.swift */; };
 		16D422552ADD3B3800F4ADB3 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 16D422542ADD3B3800F4ADB3 /* PanModal */; };
+		16E7212E2ADFCDB300F932EE /* AdminCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E7212D2ADFCDB300F932EE /* AdminCollectionType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		16D4224D2ADCF35800F4ADB3 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		16D4224F2ADCFE9B00F4ADB3 /* AdminCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCollectionViewCell.swift; sourceTree = "<group>"; };
 		16D422512ADD37F100F4ADB3 /* BanCaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanCaseView.swift; sourceTree = "<group>"; };
+		16E7212D2ADFCDB300F932EE /* AdminCollectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCollectionType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,6 +344,7 @@
 				16D4224F2ADCFE9B00F4ADB3 /* AdminCollectionViewCell.swift */,
 				16D422512ADD37F100F4ADB3 /* BanCaseView.swift */,
 				166DB1132ADF1E2D00E1A255 /* PopUpBanController.swift */,
+				16E7212D2ADFCDB300F932EE /* AdminCollectionType.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -379,7 +382,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					16C3BB282AC58C6200DCCD56 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -457,6 +460,7 @@
 				16C3BB372AC58C6200DCCD56 /* OrtaApp.xcdatamodeld in Sources */,
 				16723EFA2ACBDC2E00F76ED2 /* UserView.swift in Sources */,
 				16723EE62ACAB72300F76ED2 /* AppColor.swift in Sources */,
+				16E7212E2ADFCDB300F932EE /* AdminCollectionType.swift in Sources */,
 				168CBB262AD69F3800F8E8EC /* RegistrationTextFieldType.swift in Sources */,
 				168CBB332AD6B38500F8E8EC /* VacanciesViewController.swift in Sources */,
 				168CBB352AD6B6B400F8E8EC /* TabBarItem.swift in Sources */,
@@ -518,6 +522,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -578,6 +583,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

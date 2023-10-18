@@ -22,6 +22,13 @@ final class PopUpBanController: UIViewController {
         return label
     }()
 
+    private lazy var dissmissPopUpButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(AppImage.closeCircle.uiImage, for: .normal)
+        button.addTarget(self, action: #selector(didTappedDissmissPopUpButton), for: .touchUpInside)
+        return button
+    }()
+
     private lazy var sectionTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Что хотите забанить этот профиль"
@@ -39,6 +46,7 @@ final class PopUpBanController: UIViewController {
         button.backgroundColor = AppColor.red.uiColor
         button.setTitleColor(.white, for: .normal)
         button.setTitle("Забанить", for: .normal)
+        button.titleLabel?.font = AppFont.semibold.s17()
         return button
     }()
 
@@ -49,6 +57,7 @@ final class PopUpBanController: UIViewController {
         button.backgroundColor = AppColor.doesnthaveAccount.uiColor
         button.setTitleColor(AppColor.blackLabel.uiColor, for: .normal)
         button.setTitle("Отмена", for: .normal)
+        button.titleLabel?.font = AppFont.semibold.s17()
         return button
     }()
 
@@ -64,7 +73,7 @@ final class PopUpBanController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .white
 
-        [titleLabel, sectionTitleLabel, banButton, dismissButton].forEach {
+        [titleLabel, dissmissPopUpButton, sectionTitleLabel, banButton, dismissButton].forEach {
             view.addSubview($0)
         }
     }
@@ -77,6 +86,12 @@ final class PopUpBanController: UIViewController {
             make.leading.equalToSuperview().offset(16)
         }
 
+        dissmissPopUpButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(14)
+            make.trailing.equalToSuperview().offset(-16)
+            make.size.equalTo(28)
+        }
+
         sectionTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(16.5)
             make.leading.equalToSuperview().offset(16)
@@ -86,15 +101,36 @@ final class PopUpBanController: UIViewController {
         banButton.snp.makeConstraints { make in
             make.top.equalTo(sectionTitleLabel.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(16)
-            make.leading.equalToSuperview().offset(-16)
+            make.trailing.equalToSuperview().offset(-16)
             make.height.equalTo(64)
         }
 
         dismissButton.snp.makeConstraints { make in
             make.top.equalTo(banButton.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(16)
-            make.leading.equalToSuperview().offset(-16)
+            make.trailing.equalToSuperview().offset(-16)
             make.height.equalTo(64)
         }
+    }
+
+    // MARK: - Actions
+    @objc private func didTappedDissmissPopUpButton() {
+        self.dismiss(animated: true)
+    }
+}
+
+// MARK: - Pop Up
+extension PopUpBanController: PanModalPresentable {
+
+    var panScrollable: UIScrollView? {
+        return nil
+    }
+
+    var shortFormHeight: PanModalHeight {
+        return .contentHeight(271)
+    }
+
+    var longFormHeight: PanModalHeight {
+        return .maxHeightWithTopInset(16.5)
     }
 }
