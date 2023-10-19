@@ -14,6 +14,8 @@ final class AdminViewController: UIViewController {
     // MARK: - Properties
     private var items: [AdminCollectionType] = []
     private var selectedIndexPath: IndexPath?
+    private var destinationVC: UIViewController?
+    private var data: [ItemsSegmentedControl] = []
 
     // MARK: - UI
     private lazy var adminPhotoImageView: UIImageView = {
@@ -82,6 +84,7 @@ final class AdminViewController: UIViewController {
         setupViews()
         setupConstraints()
         navigationBar()
+        createData()
     }
 
     // MARK: - Setup Nav Bar
@@ -122,6 +125,7 @@ final class AdminViewController: UIViewController {
             make.leading.equalToSuperview().offset(35)
             make.trailing.equalToSuperview().offset(-35)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(40)
+            make.height.equalTo(80)
         }
         
         deleteAdminButton.snp.makeConstraints { make in
@@ -164,21 +168,37 @@ final class AdminViewController: UIViewController {
 
 extension AdminViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return 1
+//    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        items.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, 
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdminCollectionViewCell.cellID,
                                                       for: indexPath) as? AdminCollectionViewCell
         return cell ?? UICollectionViewCell()
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+
+        switch items[indexPath.row] {
+        case .events:
+            destinationVC = EventsViewController()
+        case .posts:
+            destinationVC = PostsReportsViewController()
+        case .profiles:
+            destinationVC = ProfilesReportsViewController()
+        case .help:
+            destinationVC = HelpCenterViewController()
+        case .reports:
+            destinationVC = ReportsViewController()
+        }
+
         if let previousIndexPath = selectedIndexPath {
             collectionView.deselectItem(at: previousIndexPath, animated: false)
             if let cell = collectionView.cellForItem(at: previousIndexPath) as? AdminCollectionViewCell {
@@ -194,6 +214,7 @@ extension AdminViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
 }
 
+// MARK: - Nav Bar
 private extension AdminViewController {
     func makeLeftBarButtonItems() -> [UIBarButtonItem] {
         let logoBarButtonItem = UIBarButtonItem(customView: adminPhotoImageView)
@@ -214,5 +235,29 @@ private extension AdminViewController {
             print("Favourites")
         }
         return UIMenu(title: "", children: [subsItem, favsItem])
+    }
+}
+
+// MARK: - Data
+private extension AdminViewController {
+    func createData() {
+        [.events, .posts, .profiles, .help, .reports].forEach {
+            items.append($0)
+        }
+        data.append(
+            ItemsSegmentedControl(name: "События")
+        )
+        data.append(
+            ItemsSegmentedControl(name: "Жалобы на посты")
+        )
+        data.append(
+            ItemsSegmentedControl(name: "Жалобы на профили")
+        )
+        data.append(
+            ItemsSegmentedControl(name: "Help Center")
+        )
+        data.append(
+            ItemsSegmentedControl(name: "Reports")
+        )
     }
 }

@@ -24,10 +24,8 @@ final class AdminCollectionViewCell: UICollectionViewCell {
 
     private lazy var collectionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Орг. и компаний"
         label.font = AppFont.medium.s15()
         label.textColor = AppColor.blackLabel.uiColor
-        label.numberOfLines = 1
         return label
     }()
 
@@ -70,5 +68,10 @@ final class AdminCollectionViewCell: UICollectionViewCell {
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(4)
         }
+    }
+
+    // MARK: Public Properties
+    public func configureCell(with model: ItemsSegmentedControl) {
+        collectionLabel.text = model.name
     }
 }
