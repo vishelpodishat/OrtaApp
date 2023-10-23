@@ -15,7 +15,7 @@ final class AdminViewController: UIViewController {
     private var items: [AdminCollectionType] = []
     private var selectedIndexPath: IndexPath?
     private var destinationVC: UIViewController?
-    private var data: [ItemsSegmentedControl] = []
+    private var data = [ItemsSegmentedControl]()
 
     // MARK: - UI
     private lazy var adminPhotoImageView: UIImageView = {
@@ -90,6 +90,9 @@ final class AdminViewController: UIViewController {
     // MARK: - Setup Nav Bar
     private func navigationBar() {
         navigationItem.leftBarButtonItems = makeLeftBarButtonItems()
+        if let destinationVC = destinationVC {
+            navigationController?.pushViewController(destinationVC, animated: true)
+        }
     }
 
     // MARK: - Setup Views
@@ -167,11 +170,6 @@ final class AdminViewController: UIViewController {
 // MARK: - Data Source and Delegates
 
 extension AdminViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         items.count
     }
@@ -180,13 +178,14 @@ extension AdminViewController: UICollectionViewDelegate, UICollectionViewDataSou
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdminCollectionViewCell.cellID,
                                                       for: indexPath) as? AdminCollectionViewCell
+        cell?.configureCell(with: data[indexPath.row])
         return cell ?? UICollectionViewCell()
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-
         switch items[indexPath.row] {
+        case .organization:
+            destinationVC = AdminViewController()
         case .events:
             destinationVC = EventsViewController()
         case .posts:
@@ -241,9 +240,12 @@ private extension AdminViewController {
 // MARK: - Data
 private extension AdminViewController {
     func createData() {
-        [.events, .posts, .profiles, .help, .reports].forEach {
+        [.organization, .events, .posts, .profiles, .help, .reports].forEach {
             items.append($0)
         }
+        data.append(
+            ItemsSegmentedControl(name: "Орг. и компаний")
+        )
         data.append(
             ItemsSegmentedControl(name: "События")
         )

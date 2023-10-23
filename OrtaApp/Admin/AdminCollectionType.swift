@@ -8,6 +8,7 @@
 import UIKit
 
 enum AdminCollectionType {
+    case organization
     case events
     case posts
     case profiles

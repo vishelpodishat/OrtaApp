@@ -63,5 +63,7 @@ enum AppImage: String, AppImageProtocol {
     case deleteAdminButton
     case checkAdminButton
     case closeCircle
+    case teaIcon
+    case successPay
 }
 

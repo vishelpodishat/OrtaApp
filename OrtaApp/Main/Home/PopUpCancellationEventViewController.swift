@@ -1,16 +1,16 @@
 //
-//  PopUpBanController.swift
+//  PopUpCancellationEventViewController.swift
 //  OrtaApp
 //
-//  Created by Алишер Сайдешев on 18.10.2023.
+//  Created by Алишер Сайдешев on 23.10.2023.
 //
 
 import UIKit
 import SnapKit
 import PanModal
 
-final class PopUpBanController: UIViewController {
-    
+final class PopUpCancellationEventViewController: UIViewController {
+
     // MARK: - UI
 
     private lazy var titleLabel: UILabel = {
@@ -31,7 +31,7 @@ final class PopUpBanController: UIViewController {
 
     private lazy var sectionTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Что хотите забанить этот профиль"
+        label.text = "Что хотите отменить свое участие?"
         label.font = AppFont.regular.s17()
         label.textColor = AppColor.blackLabel.uiColor
         label.numberOfLines = 1
@@ -39,24 +39,24 @@ final class PopUpBanController: UIViewController {
         return label
     }()
 
-    private lazy var banButton: UIButton = {
+    private lazy var notCancellationButton: UIButton = {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = 20
         button.layer.masksToBounds = true
-        button.backgroundColor = AppColor.red.uiColor
+        button.backgroundColor = AppColor.blue.uiColor
         button.setTitleColor(.white, for: .normal)
-        button.setTitle("Забанить", for: .normal)
+        button.setTitle("Не отменять участие", for: .normal)
         button.titleLabel?.font = AppFont.semibold.s17()
         return button
     }()
 
-    private lazy var dismissButton: UIButton = {
+    private lazy var dismissEventButton: UIButton = {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = 20
         button.layer.masksToBounds = true
         button.backgroundColor = AppColor.doesnthaveAccount.uiColor
         button.setTitleColor(AppColor.blackLabel.uiColor, for: .normal)
-        button.setTitle("Отмена", for: .normal)
+        button.setTitle("Отменить участие", for: .normal)
         button.titleLabel?.font = AppFont.semibold.s17()
         return button
     }()
@@ -73,7 +73,8 @@ final class PopUpBanController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .white
 
-        [titleLabel, dissmissPopUpButton, sectionTitleLabel, banButton, dismissButton].forEach {
+        [titleLabel, dissmissPopUpButton, sectionTitleLabel, 
+         notCancellationButton, dismissEventButton].forEach {
             view.addSubview($0)
         }
     }
@@ -98,15 +99,15 @@ final class PopUpBanController: UIViewController {
             make.trailing.equalToSuperview().offset(-16)
         }
 
-        banButton.snp.makeConstraints { make in
+        notCancellationButton.snp.makeConstraints { make in
             make.top.equalTo(sectionTitleLabel.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
             make.height.equalTo(64)
         }
 
-        dismissButton.snp.makeConstraints { make in
-            make.top.equalTo(banButton.snp.bottom).offset(16)
+        dismissEventButton.snp.makeConstraints { make in
+            make.top.equalTo(notCancellationButton.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
             make.height.equalTo(64)
@@ -120,7 +121,7 @@ final class PopUpBanController: UIViewController {
 }
 
 // MARK: - Pop Up
-extension PopUpBanController: PanModalPresentable {
+extension PopUpCancellationEventViewController: PanModalPresentable {
 
     var panScrollable: UIScrollView? {
         return nil
