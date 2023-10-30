@@ -46,6 +46,8 @@ final class BanCaseView: UIView {
     // MARK: - Setup Views
 
     private func setupViews() {
+        backgroundColor = .white
+
         addSubview(caseTitleLabel)
         addSubview(caseNumbersLabel)
     }
@@ -54,14 +56,13 @@ final class BanCaseView: UIView {
 
     private func setupConstraints() {
         caseTitleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(13.5)
             make.leading.equalToSuperview().offset(24)
+            make.centerY.equalToSuperview()
         }
 
         caseNumbersLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(13.5)
-            make.leading.equalTo(caseTitleLabel.snp.trailing).offset(8)
             make.trailing.equalToSuperview().offset(-24)
+            make.centerY.equalToSuperview()
         }
     }
 }

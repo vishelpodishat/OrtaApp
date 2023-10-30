@@ -18,6 +18,12 @@ final class AdminViewController: UIViewController {
     private var data = [ItemsSegmentedControl]()
 
     // MARK: - UI
+    private lazy var backgroundSafeAreaView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
+
     private lazy var adminPhotoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = AppImage.adminImageLogo.uiImage
@@ -72,7 +78,8 @@ final class AdminViewController: UIViewController {
     private lazy var buttonsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
+        stackView.alignment = .fill
         stackView.spacing = 40
         return stackView
     }()
@@ -98,13 +105,13 @@ final class AdminViewController: UIViewController {
     // MARK: - Setup Views
 
     private func setupViews() {
-        view.backgroundColor = .white
-        
+        view.backgroundColor = AppColor.backgroundMain.uiColor
+
         [deleteAdminButton, timeAdminButton, checkAdminButton].forEach {
             buttonsStackView.addArrangedSubview($0)
         }
 
-        [collectionView, casesView, buttonsStackView].forEach {
+        [backgroundSafeAreaView, collectionView, casesView, buttonsStackView].forEach {
             view.addSubview($0)
         }
     }
@@ -112,6 +119,12 @@ final class AdminViewController: UIViewController {
     // MARK: - Setup Constraints
 
     private func setupConstraints() {
+        backgroundSafeAreaView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(103)
+        }
+
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.leading.equalToSuperview()
@@ -122,6 +135,7 @@ final class AdminViewController: UIViewController {
         casesView.snp.makeConstraints { make in
             make.top.equalTo(collectionView.snp.bottom)
             make.leading.trailing.equalToSuperview()
+            make.height.equalTo(48)
         }
 
         buttonsStackView.snp.makeConstraints { make in

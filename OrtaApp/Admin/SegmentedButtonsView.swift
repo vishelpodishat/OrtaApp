@@ -5,175 +5,102 @@
 //  Created by Алишер Сайдешев on 22.10.2023.
 //
 
-import Foundation
 import UIKit
 
-protocol CollectionViewDidScrollDelegate: AnyObject {
-    func collectionViewDidScroll(for x: CGFloat)
+final class MenuBar: UIView {
+
+    // MARK: - Properties
+    let cellId = "cellId"
+    let tabNames = ["Орг. и компаний", "События", "Жалобы на посты",
+                      "Жалобы на профили", "Help Center", "Reports"]
+
+    // MARK: - UI
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let collectioView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(MenuCell.self, forCellWithReuseIdentifier: cellId)
+        collectioView.backgroundColor = .white
+        collectioView.dataSource = self
+        collectioView.delegate = self
+        return collectioView
+    }()
+
+
+    // MARK: - Lifecycle
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+
+        addSubview(collectionView)
+
+        let selectedIndexPath = IndexPath(item: 0, section: 0)
+        collectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .bottom)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+
 
 }
-protocol SegmentedControlDelegate: AnyObject {
-    func didIndexChanged(at index: Int)
-}
 
-final class SegmentedButtonsView: UIView, CollectionViewDidScrollDelegate {
-
-    //MARK: - Properties
-
-    lazy var selectorView = UIView()
-    lazy var labels = [UILabel]()
-    private var titles: [String]!
-    var textColor = UIColor.lightGray
-    var selectorTextColor = UIColor.black
-    public private(set) var selectedIndex: Int = 0
-
-    weak var segmentedControlDelegate: SegmentedControlDelegate?
-
-    convenience init(frame: CGRect, titles: [String]) {
-        self.init(frame:frame)
-        self.titles = titles
+extension MenuBar: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tabNames.count
     }
 
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId,
+                                                      for: indexPath) as! MenuCell
 
-    //MARK: - config selected Tap
+        cell.imageView.image = UIImage(named: tabNames[indexPath.item])?.withRenderingMode(.alwaysTemplate)
+        cell.tintColor = AppColor.blue.uiColor
 
-    private func configSelectedTap(){
-        let segmentsCount = CGFloat(titles.count)
-        let selectorWidth = self.frame.width / segmentsCount
-        selectorView = UIView(frame: CGRect(x: 0, 
-                                            y: self.frame.height - 0.8,
-                                            width: selectorWidth,
-                                            height: 0.5)
-        )
-        selectorView.backgroundColor = .black
-        addSubview(selectorView)
+        return cell
     }
 
-    //MARK: - updateView
-
-    private func updateView(){
-        createLabels()
-        configSelectedTap()
-        configStackView()
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: frame.width / 4, height: frame.height)
     }
 
-    //MARK: - draw
-
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        updateView()
-    }
-
-    //MARK: - create labels
-
-    private func createLabels(){
-
-        labels.removeAll()
-        subviews.forEach({$0.removeFromSuperview()})
-        for labelTitle in titles{
-
-            let label = UILabel()
-            label.font = UIFont.systemFont(ofSize: 18)
-            label.text = labelTitle
-            let tapGestureRecognizor = UITapGestureRecognizer(target: self,
-                                                              action: #selector(labelActionHandler(sender:)))
-            tapGestureRecognizor.numberOfTapsRequired = 1
-            label.addGestureRecognizer(tapGestureRecognizor)
-            label.isUserInteractionEnabled = true
-
-            label.textColor = textColor
-            label.textAlignment = .center
-            labels.append(label)
-        }
-        labels[0].textColor = selectorTextColor
-    }
-
-    //MARK: - set labels titles
-
-    func setLabelsTitles(titles:[String]){
-
-        self.titles = titles
-        self.updateView()
-
-    }
-
-    //MARK: - config stackView
-
-    private func configStackView(){
-        let stackView = UIStackView(arrangedSubviews: labels)
-        stackView.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .fillEqually
-        addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        stackView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        stackView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-
-    }
-
-
-    //MARK: - handler
-
-    @objc private func labelActionHandler(sender:UITapGestureRecognizer){
-
-
-        for (labelIndex, lbl) in labels.enumerated() {
-
-
-            if lbl == sender.view{
-                let selectorPosition = frame.width / CGFloat(titles.count) * CGFloat(labelIndex)
-                selectedIndex = labelIndex
-                //todo set delegate
-                segmentedControlDelegate?.didIndexChanged(at: selectedIndex)
-                UIView.animate(withDuration: 0.1) {
-                    self.selectorView.frame.origin.x = selectorPosition
-                }
-            }
-        }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }
-extension SegmentedButtonsView{
 
-    func collectionViewDidScroll(for x: CGFloat) {
+final class MenuCell: UIView {
 
-        UIView.animate(withDuration: 0.1) { [self] in
-            self.selectorView.frame.origin.x = x
+    let imageView: UIImageView = {
+        let iv = UIImageView()
+        iv.image = UIImage(named: "home")?.withRenderingMode(.alwaysTemplate)
+        iv.tintColor = UIColor.rgb(red: 91, green: 14, blue: 13)
+        return iv
+    }()
 
-
-            for (_,view)in subviews.enumerated(){
-
-
-                if view is UIStackView{
-
-                    guard let stack = view as? UIStackView else { return }
-
-
-                    for (_,label) in stack.arrangedSubviews.enumerated(){
-
-                        guard let label = label as? UILabel else {
-                            print("Error ")
-                            return
-                        }
-
-                        if  (label.frame.width / 2  >= self.selectorView.frame.origin.x && titles[0] == label.text! || label.frame.width / 2  <= self.selectorView.frame.origin.x && titles[1] == label.text! ) {
-
-                            label.textColor = selectorTextColor
-
-                        }else{
-
-                            label.textColor = textColor
-                        }
-
-                    }
-                }
-            }
-
+    override var isHighlighted: Bool {
+        didSet {
+            imageView.tintColor = isHighlighted ? UIColor.white : UIColor.rgb(red: 91, green: 14, blue: 13)
         }
     }
 
-    func didIndexChanged(at index: Int) {
-
+    override var isSelected: Bool {
+        didSet {
+            imageView.tintColor = isSelected ? UIColor.white : UIColor.rgb(red: 91, green: 14, blue: 13)
+        }
     }
+
+    override func setupViews() {
+        super.setupViews()
+
+        addSubview(imageView)
+        addConstraintsWithFormat("H:[v0(28)]", views: imageView)
+        addConstraintsWithFormat("V:[v0(28)]", views: imageView)
+
+        addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
+    }
+
 }
+

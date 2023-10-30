@@ -1,5 +1,5 @@
 //
-//  EventsViewController.swift
+//  PostsReportsViewController.swift
 //  OrtaApp
 //
 //  Created by Алишер Сайдешев on 19.10.2023.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class EventsViewController: UIViewController {
+class PostsReportsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemCyan
     }
     
 

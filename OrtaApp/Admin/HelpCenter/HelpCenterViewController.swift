@@ -1,5 +1,5 @@
 //
-//  PostsReportsViewController.swift
+//  HelpCenterViewController.swift
 //  OrtaApp
 //
 //  Created by Алишер Сайдешев on 19.10.2023.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class PostsReportsViewController: UIViewController {
+class HelpCenterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemMint
     }
     
 

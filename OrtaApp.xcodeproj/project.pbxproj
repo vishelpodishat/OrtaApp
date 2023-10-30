@@ -50,6 +50,7 @@
 		16B6C7F42AE658360076F6AD /* TYCancelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B6C7F32AE658360076F6AD /* TYCancelViewController.swift */; };
 		16B6C7F62AE661A70076F6AD /* TYPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B6C7F52AE661A70076F6AD /* TYPayViewController.swift */; };
 		16B6C7F82AE669500076F6AD /* PopUpCancellationEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B6C7F72AE669500076F6AD /* PopUpCancellationEventViewController.swift */; };
+		16B6C7FF2AE675BC0076F6AD /* PostsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B6C7FE2AE675BC0076F6AD /* PostsCollectionViewCell.swift */; };
 		16C3BB2D2AC58C6200DCCD56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */; };
 		16C3BB2F2AC58C6200DCCD56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */; };
 		16C3BB312AC58C6200DCCD56 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3BB302AC58C6200DCCD56 /* AuthorizationViewController.swift */; };
@@ -106,6 +107,7 @@
 		16B6C7F32AE658360076F6AD /* TYCancelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYCancelViewController.swift; sourceTree = "<group>"; };
 		16B6C7F52AE661A70076F6AD /* TYPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYPayViewController.swift; sourceTree = "<group>"; };
 		16B6C7F72AE669500076F6AD /* PopUpCancellationEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpCancellationEventViewController.swift; sourceTree = "<group>"; };
+		16B6C7FE2AE675BC0076F6AD /* PostsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCollectionViewCell.swift; sourceTree = "<group>"; };
 		16C3BB292AC58C6200DCCD56 /* OrtaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrtaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C3BB2C2AC58C6200DCCD56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C3BB2E2AC58C6200DCCD56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -276,6 +278,47 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		16B6C7F92AE673420076F6AD /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				16B6C7E52AE16EC50076F6AD /* EventsViewController.swift */,
+				16B6C7FE2AE675BC0076F6AD /* PostsCollectionViewCell.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		16B6C7FA2AE673700076F6AD /* PostsReports */ = {
+			isa = PBXGroup;
+			children = (
+				16B6C7E72AE16EEB0076F6AD /* PostsReportsViewController.swift */,
+			);
+			path = PostsReports;
+			sourceTree = "<group>";
+		};
+		16B6C7FB2AE6737B0076F6AD /* ProfileReports */ = {
+			isa = PBXGroup;
+			children = (
+				16B6C7E92AE16F000076F6AD /* ProfilesReportsViewController.swift */,
+			);
+			path = ProfileReports;
+			sourceTree = "<group>";
+		};
+		16B6C7FC2AE673890076F6AD /* HelpCenter */ = {
+			isa = PBXGroup;
+			children = (
+				16B6C7EB2AE16F1F0076F6AD /* HelpCenterViewController.swift */,
+			);
+			path = HelpCenter;
+			sourceTree = "<group>";
+		};
+		16B6C7FD2AE673900076F6AD /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				16B6C7ED2AE16F280076F6AD /* ReportsViewController.swift */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
 		16C3BB202AC58C6200DCCD56 = {
 			isa = PBXGroup;
 			children = (
@@ -368,13 +411,13 @@
 				16D422512ADD37F100F4ADB3 /* BanCaseView.swift */,
 				166DB1132ADF1E2D00E1A255 /* PopUpBanController.swift */,
 				16E7212D2ADFCDB300F932EE /* AdminCollectionType.swift */,
-				16B6C7E52AE16EC50076F6AD /* EventsViewController.swift */,
-				16B6C7E72AE16EEB0076F6AD /* PostsReportsViewController.swift */,
-				16B6C7E92AE16F000076F6AD /* ProfilesReportsViewController.swift */,
-				16B6C7EB2AE16F1F0076F6AD /* HelpCenterViewController.swift */,
-				16B6C7ED2AE16F280076F6AD /* ReportsViewController.swift */,
 				16B6C7EF2AE170840076F6AD /* ItemsSegmentedControl.swift */,
 				16B6C7F12AE537590076F6AD /* SegmentedButtonsView.swift */,
+				16B6C7F92AE673420076F6AD /* Events */,
+				16B6C7FA2AE673700076F6AD /* PostsReports */,
+				16B6C7FB2AE6737B0076F6AD /* ProfileReports */,
+				16B6C7FC2AE673890076F6AD /* HelpCenter */,
+				16B6C7FD2AE673900076F6AD /* Reports */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -473,6 +516,7 @@
 				16B6C7F02AE170840076F6AD /* ItemsSegmentedControl.swift in Sources */,
 				16D4224B2AD7FA1900F4ADB3 /* NavigationView.swift in Sources */,
 				16B6C7E62AE16EC50076F6AD /* EventsViewController.swift in Sources */,
+				16B6C7FF2AE675BC0076F6AD /* PostsCollectionViewCell.swift in Sources */,
 				168FA4102AD14C24000741DE /* RegistrationCompanyViewController.swift in Sources */,
 				16723EF22ACAD21300F76ED2 /* AppImages.swift in Sources */,
 				168CBB2B2AD6B2B900F8E8EC /* HomeMainViewController.swift in Sources */,
