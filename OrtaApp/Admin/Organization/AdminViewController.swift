@@ -55,7 +55,15 @@ final class AdminViewController: UIViewController {
         view.backgroundColor = .white
         return view
     }()
-    
+
+    private lazy var casesCompanyView: OrganizationCaseView = {
+        let view = OrganizationCaseView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 24
+        return view
+    }()
+
+
     private lazy var deleteAdminButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(AppImage.deleteAdminButton.uiImage, for: .normal)
@@ -92,6 +100,7 @@ final class AdminViewController: UIViewController {
         setupConstraints()
         navigationBar()
         createData()
+        configureCases()
     }
 
     // MARK: - Setup Nav Bar
@@ -111,7 +120,8 @@ final class AdminViewController: UIViewController {
             buttonsStackView.addArrangedSubview($0)
         }
 
-        [backgroundSafeAreaView, collectionView, casesView, buttonsStackView].forEach {
+        [backgroundSafeAreaView, collectionView, casesView,
+         casesCompanyView, buttonsStackView].forEach {
             view.addSubview($0)
         }
     }
@@ -136,6 +146,13 @@ final class AdminViewController: UIViewController {
             make.top.equalTo(collectionView.snp.bottom)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(48)
+        }
+        
+        casesCompanyView.snp.makeConstraints { make in
+            make.top.equalTo(casesView.snp.bottom).offset(16)
+            make.leading.equalToSuperview().offset(8)
+            make.trailing.equalToSuperview().offset(-8)
+            make.height.equalTo(108)
         }
 
         buttonsStackView.snp.makeConstraints { make in
@@ -276,4 +293,14 @@ private extension AdminViewController {
             ItemsSegmentedControl(name: "Reports")
         )
     }
+
+    // MARK: Configuration Cases
+
+    func configureCases() {
+        let cases = OrganizationCasesModel(companyName: "magnum",
+                                           title: "magnum@gmail.kz",
+                                           icon: AppImage.smsEdit.uiImage)
+        casesCompanyView.configure(with: cases)
+    }
+
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		162CE4D92AF113BF007D1D1F /* HelpCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162CE4D82AF113BF007D1D1F /* HelpCenterView.swift */; };
+		162CE4DB2AF13683007D1D1F /* OrganizationCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162CE4DA2AF13683007D1D1F /* OrganizationCaseView.swift */; };
+		162CE4DF2AF13A26007D1D1F /* OrganizationCasesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162CE4DE2AF13A26007D1D1F /* OrganizationCasesModel.swift */; };
 		166DB1142ADF1E2D00E1A255 /* PopUpBanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166DB1132ADF1E2D00E1A255 /* PopUpBanController.swift */; };
 		16723EDC2ACAB42200F76ED2 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16723ED82ACAB42200F76ED2 /* Inter-Medium.ttf */; };
 		16723EDD2ACAB42200F76ED2 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16723ED92ACAB42200F76ED2 /* Inter-Bold.ttf */; };
@@ -66,6 +69,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		162CE4D82AF113BF007D1D1F /* HelpCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterView.swift; sourceTree = "<group>"; };
+		162CE4DA2AF13683007D1D1F /* OrganizationCaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationCaseView.swift; sourceTree = "<group>"; };
+		162CE4DE2AF13A26007D1D1F /* OrganizationCasesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationCasesModel.swift; sourceTree = "<group>"; };
 		166DB1132ADF1E2D00E1A255 /* PopUpBanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpBanController.swift; sourceTree = "<group>"; };
 		16723ED82ACAB42200F76ED2 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
 		16723ED92ACAB42200F76ED2 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
@@ -137,6 +143,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		162CE4DC2AF139C4007D1D1F /* Organization */ = {
+			isa = PBXGroup;
+			children = (
+				16D4224D2ADCF35800F4ADB3 /* AdminViewController.swift */,
+				16D4224F2ADCFE9B00F4ADB3 /* AdminCollectionViewCell.swift */,
+				16E7212D2ADFCDB300F932EE /* AdminCollectionType.swift */,
+				162CE4DD2AF139FD007D1D1F /* Model */,
+				16B6C7F12AE537590076F6AD /* SegmentedButtonsView.swift */,
+				162CE4DA2AF13683007D1D1F /* OrganizationCaseView.swift */,
+				16D422512ADD37F100F4ADB3 /* BanCaseView.swift */,
+			);
+			path = Organization;
+			sourceTree = "<group>";
+		};
+		162CE4DD2AF139FD007D1D1F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				16B6C7EF2AE170840076F6AD /* ItemsSegmentedControl.swift */,
+				162CE4DE2AF13A26007D1D1F /* OrganizationCasesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		16723ED72ACAB42200F76ED2 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				16B6C7EB2AE16F1F0076F6AD /* HelpCenterViewController.swift */,
+				162CE4D82AF113BF007D1D1F /* HelpCenterView.swift */,
 			);
 			path = HelpCenter;
 			sourceTree = "<group>";
@@ -406,13 +436,8 @@
 		16D4224C2ADCF25000F4ADB3 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
-				16D4224D2ADCF35800F4ADB3 /* AdminViewController.swift */,
-				16D4224F2ADCFE9B00F4ADB3 /* AdminCollectionViewCell.swift */,
-				16D422512ADD37F100F4ADB3 /* BanCaseView.swift */,
+				162CE4DC2AF139C4007D1D1F /* Organization */,
 				166DB1132ADF1E2D00E1A255 /* PopUpBanController.swift */,
-				16E7212D2ADFCDB300F932EE /* AdminCollectionType.swift */,
-				16B6C7EF2AE170840076F6AD /* ItemsSegmentedControl.swift */,
-				16B6C7F12AE537590076F6AD /* SegmentedButtonsView.swift */,
 				16B6C7F92AE673420076F6AD /* Events */,
 				16B6C7FA2AE673700076F6AD /* PostsReports */,
 				16B6C7FB2AE6737B0076F6AD /* ProfileReports */,
@@ -525,6 +550,7 @@
 				16B6C7EC2AE16F1F0076F6AD /* HelpCenterViewController.swift in Sources */,
 				16723EF82ACBDA6300F76ED2 /* ChooseRoleViewController.swift in Sources */,
 				16B6C7F82AE669500076F6AD /* PopUpCancellationEventViewController.swift in Sources */,
+				162CE4DB2AF13683007D1D1F /* OrganizationCaseView.swift in Sources */,
 				16D422502ADCFE9B00F4ADB3 /* AdminCollectionViewCell.swift in Sources */,
 				16B6C7F22AE537590076F6AD /* SegmentedButtonsView.swift in Sources */,
 				16723EE12ACAB43E00F76ED2 /* AppFont.swift in Sources */,
@@ -535,6 +561,7 @@
 				16C3BB2F2AC58C6200DCCD56 /* SceneDelegate.swift in Sources */,
 				168CBB2D2AD6B2E300F8E8EC /* SearchViewController.swift in Sources */,
 				16B6C7EE2AE16F280076F6AD /* ReportsViewController.swift in Sources */,
+				162CE4DF2AF13A26007D1D1F /* OrganizationCasesModel.swift in Sources */,
 				16723EFD2ACBE8BE00F76ED2 /* OrganizationView.swift in Sources */,
 				168CBB372AD6C41900F8E8EC /* CustomTabBar.swift in Sources */,
 				16D4224E2ADCF35800F4ADB3 /* AdminViewController.swift in Sources */,
@@ -552,6 +579,7 @@
 				168CBB292AD6B20800F8E8EC /* TabBarController.swift in Sources */,
 				16723EEB2ACAB8DA00F76ED2 /* AuthorizationBlueHeaderView.swift in Sources */,
 				168CBB2F2AD6B30F00F8E8EC /* ChatsViewController.swift in Sources */,
+				162CE4D92AF113BF007D1D1F /* HelpCenterView.swift in Sources */,
 				168FA4072AD01F0C000741DE /* GifLoading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

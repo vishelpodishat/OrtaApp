@@ -6,24 +6,40 @@
 //
 
 import UIKit
+import SnapKit
 
-class HelpCenterViewController: UIViewController {
+final class HelpCenterViewController: UIViewController {
 
+    // MARK: - UI
+    private lazy var casesView: HelpCenterView = {
+        let view = HelpCenterView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 24
+        return view
+    }()
+
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupViews()
+        setupConstraints()
+    }
+    // MARK: - Setup Views
+
+    private func setupViews() {
         view.backgroundColor = .systemMint
+        
+        view.addSubview(casesView)
     }
-    
 
-    /*
-    // MARK: - Navigation
+    // MARK: - Setup Constraints
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupConstraints() {
+        casesView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(200)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(186)
+        }
     }
-    */
-
 }
