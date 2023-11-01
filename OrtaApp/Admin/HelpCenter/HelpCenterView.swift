@@ -51,7 +51,7 @@ final class HelpCenterView: UIView {
         return label
     }()
 
-    private lazy var replyOrderButton: UIButton = {
+    lazy var replyOrderButton: UIButton = {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = 20
         button.layer.masksToBounds = true

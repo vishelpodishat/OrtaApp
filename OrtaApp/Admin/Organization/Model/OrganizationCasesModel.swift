@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct OrganizationCasesModel {
-    let companyName: String
+    let companyName: String?
     let title: String
     let icon: UIImage?
 }

@@ -6,24 +6,45 @@
 //
 
 import UIKit
+import SnapKit
 
-class ReportsViewController: UIViewController {
+final class ReportsViewController: UIViewController {
+    
+    // MARK: - UI
 
+    private lazy var reportsView: HelpCenterView = {
+        let view = HelpCenterView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 24
+        view.sizeToFit()
+        return view
+    }()
+
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemPink
+        setupViews()
+        setupConstraints()
     }
     
+    // MARK: - Setup Views
 
-    /*
-    // MARK: - Navigation
+    private func setupViews() {
+        view.backgroundColor = AppColor.backgroundMain.uiColor
+        view.addSubview(reportsView)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        reportsView.replyOrderButton.isHidden = true
     }
-    */
 
+    // MARK: - Setup Constraints
+
+    private func setupConstraints() {
+        reportsView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(200)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(reportsView.replyOrderButton.snp.bottom).offset(-40)
+        }
+    }
+    
 }
