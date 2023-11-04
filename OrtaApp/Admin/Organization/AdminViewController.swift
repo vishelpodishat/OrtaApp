@@ -159,19 +159,19 @@ final class AdminViewController: UIViewController {
             make.leading.equalToSuperview().offset(35)
             make.trailing.equalToSuperview().offset(-35)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(40)
-            make.height.equalTo(80)
+//            make.height.equalTo(80)
         }
         
         deleteAdminButton.snp.makeConstraints { make in
-            make.size.equalTo(80)
+            make.size.equalTo(160)
         }
 
         timeAdminButton.snp.makeConstraints { make in
-            make.size.equalTo(80)
+            make.size.equalTo(160)
         }
 
         checkAdminButton.snp.makeConstraints { make in
-            make.size.equalTo(80)
+            make.size.equalTo(160)
         }
 
         adminPhotoImageView.snp.makeConstraints { make in

@@ -67,5 +67,6 @@ enum AppImage: String, AppImageProtocol {
     case successPay
     case personHelpCenterImage
     case moreImageView
+    case postImage
 }
 

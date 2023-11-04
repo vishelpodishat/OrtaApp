@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160111952AF38090004B7121 /* PhoneChangeSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160111942AF38090004B7121 /* PhoneChangeSuccessController.swift */; };
 		162CE4D92AF113BF007D1D1F /* HelpCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162CE4D82AF113BF007D1D1F /* HelpCenterView.swift */; };
 		162CE4DB2AF13683007D1D1F /* OrganizationCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162CE4DA2AF13683007D1D1F /* OrganizationCaseView.swift */; };
 		162CE4DF2AF13A26007D1D1F /* OrganizationCasesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162CE4DE2AF13A26007D1D1F /* OrganizationCasesModel.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		160111942AF38090004B7121 /* PhoneChangeSuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneChangeSuccessController.swift; sourceTree = "<group>"; };
 		162CE4D82AF113BF007D1D1F /* HelpCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterView.swift; sourceTree = "<group>"; };
 		162CE4DA2AF13683007D1D1F /* OrganizationCaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationCaseView.swift; sourceTree = "<group>"; };
 		162CE4DE2AF13A26007D1D1F /* OrganizationCasesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationCasesModel.swift; sourceTree = "<group>"; };
@@ -143,6 +145,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		160111932AF38057004B7121 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				160111942AF38090004B7121 /* PhoneChangeSuccessController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		162CE4DC2AF139C4007D1D1F /* Organization */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +274,7 @@
 		168CBB272AD6B1AB00F8E8EC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				160111932AF38057004B7121 /* Profile */,
 				16D422452AD7EBD100F4ADB3 /* TabBar */,
 				16D422442AD7EBC500F4ADB3 /* Home */,
 				16D422462AD7EBDA00F4ADB3 /* Search */,
@@ -534,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16B6C7E82AE16EEB0076F6AD /* PostsReportsViewController.swift in Sources */,
+				160111952AF38090004B7121 /* PhoneChangeSuccessController.swift in Sources */,
 				166DB1142ADF1E2D00E1A255 /* PopUpBanController.swift in Sources */,
 				168FA4132AD14D64000741DE /* CompanyRegistrationTableViewCell.swift in Sources */,
 				16723EF02ACACEA700F76ED2 /* CustomTextField.swift in Sources */,
