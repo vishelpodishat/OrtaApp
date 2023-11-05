@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		160111952AF38090004B7121 /* PhoneChangeSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160111942AF38090004B7121 /* PhoneChangeSuccessController.swift */; };
+		1610BFAB2AF667B800C6401B /* CommentPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610BFAA2AF667B800C6401B /* CommentPostView.swift */; };
 		162CE4D92AF113BF007D1D1F /* HelpCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162CE4D82AF113BF007D1D1F /* HelpCenterView.swift */; };
 		162CE4DB2AF13683007D1D1F /* OrganizationCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162CE4DA2AF13683007D1D1F /* OrganizationCaseView.swift */; };
 		162CE4DF2AF13A26007D1D1F /* OrganizationCasesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162CE4DE2AF13A26007D1D1F /* OrganizationCasesModel.swift */; };
+		16471B042AF62EF500C4DC43 /* AdminMainButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16471B032AF62EF500C4DC43 /* AdminMainButtonsView.swift */; };
+		16471B062AF62FF600C4DC43 /* ButtonsAdminModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16471B052AF62FF600C4DC43 /* ButtonsAdminModel.swift */; };
 		166DB1142ADF1E2D00E1A255 /* PopUpBanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166DB1132ADF1E2D00E1A255 /* PopUpBanController.swift */; };
 		16723EDC2ACAB42200F76ED2 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16723ED82ACAB42200F76ED2 /* Inter-Medium.ttf */; };
 		16723EDD2ACAB42200F76ED2 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16723ED92ACAB42200F76ED2 /* Inter-Bold.ttf */; };
@@ -71,9 +74,12 @@
 
 /* Begin PBXFileReference section */
 		160111942AF38090004B7121 /* PhoneChangeSuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneChangeSuccessController.swift; sourceTree = "<group>"; };
+		1610BFAA2AF667B800C6401B /* CommentPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPostView.swift; sourceTree = "<group>"; };
 		162CE4D82AF113BF007D1D1F /* HelpCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterView.swift; sourceTree = "<group>"; };
 		162CE4DA2AF13683007D1D1F /* OrganizationCaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationCaseView.swift; sourceTree = "<group>"; };
 		162CE4DE2AF13A26007D1D1F /* OrganizationCasesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationCasesModel.swift; sourceTree = "<group>"; };
+		16471B032AF62EF500C4DC43 /* AdminMainButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMainButtonsView.swift; sourceTree = "<group>"; };
+		16471B052AF62FF600C4DC43 /* ButtonsAdminModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsAdminModel.swift; sourceTree = "<group>"; };
 		166DB1132ADF1E2D00E1A255 /* PopUpBanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpBanController.swift; sourceTree = "<group>"; };
 		16723ED82ACAB42200F76ED2 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
 		16723ED92ACAB42200F76ED2 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
@@ -153,6 +159,16 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		1610BFA92AF6679900C6401B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				16B6C7E52AE16EC50076F6AD /* EventsViewController.swift */,
+				16B6C7FE2AE675BC0076F6AD /* PostsCollectionViewCell.swift */,
+				1610BFAA2AF667B800C6401B /* CommentPostView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		162CE4DC2AF139C4007D1D1F /* Organization */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +179,7 @@
 				16B6C7F12AE537590076F6AD /* SegmentedButtonsView.swift */,
 				162CE4DA2AF13683007D1D1F /* OrganizationCaseView.swift */,
 				16D422512ADD37F100F4ADB3 /* BanCaseView.swift */,
+				16471B032AF62EF500C4DC43 /* AdminMainButtonsView.swift */,
 			);
 			path = Organization;
 			sourceTree = "<group>";
@@ -172,6 +189,7 @@
 			children = (
 				16B6C7EF2AE170840076F6AD /* ItemsSegmentedControl.swift */,
 				162CE4DE2AF13A26007D1D1F /* OrganizationCasesModel.swift */,
+				16471B052AF62FF600C4DC43 /* ButtonsAdminModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,8 +339,7 @@
 		16B6C7F92AE673420076F6AD /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				16B6C7E52AE16EC50076F6AD /* EventsViewController.swift */,
-				16B6C7FE2AE675BC0076F6AD /* PostsCollectionViewCell.swift */,
+				1610BFA92AF6679900C6401B /* View */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -549,6 +566,7 @@
 				166DB1142ADF1E2D00E1A255 /* PopUpBanController.swift in Sources */,
 				168FA4132AD14D64000741DE /* CompanyRegistrationTableViewCell.swift in Sources */,
 				16723EF02ACACEA700F76ED2 /* CustomTextField.swift in Sources */,
+				16471B042AF62EF500C4DC43 /* AdminMainButtonsView.swift in Sources */,
 				16B6C7EA2AE16F000076F6AD /* ProfilesReportsViewController.swift in Sources */,
 				16B6C7F02AE170840076F6AD /* ItemsSegmentedControl.swift in Sources */,
 				16D4224B2AD7FA1900F4ADB3 /* NavigationView.swift in Sources */,
@@ -565,6 +583,7 @@
 				162CE4DB2AF13683007D1D1F /* OrganizationCaseView.swift in Sources */,
 				16D422502ADCFE9B00F4ADB3 /* AdminCollectionViewCell.swift in Sources */,
 				16B6C7F22AE537590076F6AD /* SegmentedButtonsView.swift in Sources */,
+				16471B062AF62FF600C4DC43 /* ButtonsAdminModel.swift in Sources */,
 				16723EE12ACAB43E00F76ED2 /* AppFont.swift in Sources */,
 				16723EFF2ACC060700F76ED2 /* RegistrationUserViewController.swift in Sources */,
 				16C3BB2D2AC58C6200DCCD56 /* AppDelegate.swift in Sources */,
@@ -578,6 +597,7 @@
 				168CBB372AD6C41900F8E8EC /* CustomTabBar.swift in Sources */,
 				16D4224E2ADCF35800F4ADB3 /* AdminViewController.swift in Sources */,
 				16D422522ADD37F100F4ADB3 /* BanCaseView.swift in Sources */,
+				1610BFAB2AF667B800C6401B /* CommentPostView.swift in Sources */,
 				16B6C7F62AE661A70076F6AD /* TYPayViewController.swift in Sources */,
 				16C3BB372AC58C6200DCCD56 /* OrtaApp.xcdatamodeld in Sources */,
 				16723EFA2ACBDC2E00F76ED2 /* UserView.swift in Sources */,

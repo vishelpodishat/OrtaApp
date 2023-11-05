@@ -16,6 +16,7 @@ final class AdminViewController: UIViewController {
     private var selectedIndexPath: IndexPath?
     private var destinationVC: UIViewController?
     private var data = [ItemsSegmentedControl]()
+    private var buttons = [ButtonsAdminModel]()
 
     // MARK: - UI
     private lazy var backgroundSafeAreaView: UIView = {
@@ -63,33 +64,12 @@ final class AdminViewController: UIViewController {
         return view
     }()
 
-
-    private lazy var deleteAdminButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(AppImage.deleteAdminButton.uiImage, for: .normal)
-        button.addTarget(self, action: #selector(didPressedBanButton), for: .touchUpInside)
-        return button
-    }()
-
-    private lazy var timeAdminButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(AppImage.timeAdminButton.uiImage, for: .normal)
-        return button
-    }()
-
-    private lazy var checkAdminButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(AppImage.checkAdminButton.uiImage, for: .normal)
-        return button
-    }()
-
-    private lazy var buttonsStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .fill
-        stackView.alignment = .fill
-        stackView.spacing = 40
-        return stackView
+    private lazy var buttonView: AdminMainButtonsView = {
+        let view = AdminMainButtonsView()
+        view.backgroundColor = .white
+        view.clipsToBounds = true
+        view.layer.cornerRadius = view.frame.size.width / 2
+        return view
     }()
 
     // MARK: - LifeCycle
@@ -116,12 +96,8 @@ final class AdminViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = AppColor.backgroundMain.uiColor
 
-        [deleteAdminButton, timeAdminButton, checkAdminButton].forEach {
-            buttonsStackView.addArrangedSubview($0)
-        }
-
         [backgroundSafeAreaView, collectionView, casesView,
-         casesCompanyView, buttonsStackView].forEach {
+         casesCompanyView, buttonView].forEach {
             view.addSubview($0)
         }
     }
@@ -155,23 +131,10 @@ final class AdminViewController: UIViewController {
             make.height.equalTo(108)
         }
 
-        buttonsStackView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(35)
-            make.trailing.equalToSuperview().offset(-35)
+        buttonView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(-35)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(40)
-//            make.height.equalTo(80)
-        }
-        
-        deleteAdminButton.snp.makeConstraints { make in
-            make.size.equalTo(160)
-        }
-
-        timeAdminButton.snp.makeConstraints { make in
-            make.size.equalTo(160)
-        }
-
-        checkAdminButton.snp.makeConstraints { make in
-            make.size.equalTo(160)
+            make.size.equalTo(80)
         }
 
         adminPhotoImageView.snp.makeConstraints { make in
@@ -303,4 +266,19 @@ private extension AdminViewController {
         casesCompanyView.configure(with: cases)
     }
 
+    // MARK: - Buttons
+    func getButtons() {
+        buttons.append(
+            ButtonsAdminModel(imageName: AppImage.deleteCircle.uiImage,
+                              color: AppColor.red.uiColor)
+        )
+        buttons.append(
+            ButtonsAdminModel(imageName: AppImage.clockCircle.uiImage,
+                              color: .white)
+        )
+        buttons.append(
+            ButtonsAdminModel(imageName: AppImage.checkCircle.uiImage,
+                              color: AppColor.green.uiColor)
+        )
+    }
 }

@@ -30,4 +30,5 @@ enum AppColor: String, AppColorProtocol {
     case underLineColor
     case red
     case backgroundMain
+    case green
 }
