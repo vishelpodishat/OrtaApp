@@ -11,7 +11,7 @@ import SnapKit
 final class CommentPostView: UIView {
 
     // MARK: - Properties
-    let heightObjects: Int = 32
+    private let heightObjects: Int = 32
 
     // MARK: - UI
     private lazy var arrowUpButton: UIButton = {
@@ -39,7 +39,7 @@ final class CommentPostView: UIView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillProportionally
-        stackView.spacing = 8
+        stackView.spacing = 4
         return stackView
     }()
 
@@ -141,7 +141,7 @@ final class CommentPostView: UIView {
 
         sendStackView.snp.makeConstraints { make in
             make.leading.equalTo(commentsStackView.snp.trailing).offset(82)
-            make.trailing.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
             make.centerY.equalToSuperview()
             make.height.equalTo(heightObjects)
         }

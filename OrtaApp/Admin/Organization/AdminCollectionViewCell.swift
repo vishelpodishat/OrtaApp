@@ -11,7 +11,7 @@ import SnapKit
 final class AdminCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Public Properties
-    public static let cellID = String(describing: AdminCollectionViewCell.self)
+    static let cellID = String(describing: AdminCollectionViewCell.self)
 
     // MARK: - States
     override var isSelected: Bool {

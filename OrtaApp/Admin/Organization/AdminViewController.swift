@@ -18,7 +18,29 @@ final class AdminViewController: UIViewController {
     private var data = [ItemsSegmentedControl]()
     private var buttons = [ButtonsAdminModel]()
 
+    private var bounceOnScroll: Bool = true {
+        didSet {
+            collectionView.bounces = bounceOnScroll
+        }
+    }
+
+    // MARK: - SegmentedControll Properties
+    private let eventsVC = EventsViewController()
+    private let postsReportsVC = PostsReportsViewController()
+    private let profileReportsVC = ProfilesReportsViewController()
+    private let helpCenterVC = HelpCenterViewController()
+    private let reportsVC = ReportsViewController()
+
     // MARK: - UI
+    private lazy var segmentedController: UISegmentedControl = {
+        let vcArray = ["Organization", "Events", "Posts Reports",
+                       "Profile Reports", "Help Center", "Reports"]
+        let segControl = UISegmentedControl(items: vcArray)
+        segControl.backgroundColor = .white
+        segControl.addTarget(self, action: #selector(segAction(_:)), for: .valueChanged)
+        return segControl
+    }()
+
     private lazy var backgroundSafeAreaView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -83,6 +105,10 @@ final class AdminViewController: UIViewController {
         configureCases()
     }
 
+    override func viewDidLayoutSubviews() {
+        view.addSubview(segmentedController)
+    }
+
     // MARK: - Setup Nav Bar
     private func navigationBar() {
         navigationItem.leftBarButtonItems = makeLeftBarButtonItems()
@@ -92,7 +118,6 @@ final class AdminViewController: UIViewController {
     }
 
     // MARK: - Setup Views
-
     private func setupViews() {
         view.backgroundColor = AppColor.backgroundMain.uiColor
 
@@ -139,7 +164,14 @@ final class AdminViewController: UIViewController {
 
         adminPhotoImageView.snp.makeConstraints { make in
             make.size.equalTo(40)
-        } 
+        }
+    }
+
+    private func setupSegmentedControl() {
+        segmentedController.snp.makeConstraints { make in
+            make.top.equalTo(backgroundSafeAreaView.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+        }
     }
 
     // MARK: Create CompositionalLayout
@@ -153,11 +185,59 @@ final class AdminViewController: UIViewController {
         return layout
     }
 
+    // MARK: - Segmented Controll Loader
+    private func segmentLoader() {
+
+        [eventsVC, postsReportsVC, profileReportsVC, helpCenterVC, reportsVC].forEach {
+            self.addChild($0)
+        }
+
+        [eventsVC.view, postsReportsVC.view, profileReportsVC.view,
+         helpCenterVC.view, reportsVC.view].forEach {
+            self.view.addSubview($0)
+        }
+
+        eventsVC.didMove(toParent: self)
+        postsReportsVC.didMove(toParent: self)
+        profileReportsVC.didMove(toParent: self)
+        helpCenterVC.didMove(toParent: self)
+        reportsVC.didMove(toParent: self)
+
+        eventsVC.view.frame = self.view.bounds
+        postsReportsVC.view.frame = self.view.bounds
+        profileReportsVC.view.frame = self.view.bounds
+        helpCenterVC.view.frame = self.view.bounds
+        reportsVC.view.frame = self.view.bounds
+    }
+
     // MARK: - Actions
 
     @objc private func didPressedBanButton() {
         let controller = PopUpBanController()
         presentPanModal(controller)
+    }
+
+    @objc private func segAction(_ segmentedControll: UISegmentedControl) {
+        eventsVC.view.isHidden = true
+        postsReportsVC.view.isHidden = true
+        profileReportsVC.view.isHidden = true
+        helpCenterVC.view.isHidden = true
+        reportsVC.view.isHidden = true
+
+        switch segmentedControll.selectedSegmentIndex {
+        case 0:
+            eventsVC.view.isHidden = false
+        case 1:
+            postsReportsVC.view.isHidden = false
+        case 2:
+            profileReportsVC.view.isHidden = false
+        case 3:
+            helpCenterVC.view.isHidden = false
+        case 4:
+            reportsVC.view.isHidden = false
+        default:
+            eventsVC.view.isHidden = false
+        }
     }
 }
 
